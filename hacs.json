@@ -1,5 +1,7 @@
 {
-  "name": "DoubleD Home Assistant Add-ons",
-  "url": "https://github.com/DoubleD-HA/hassio-addons",
-  "maintainer": "David Demers"
+  "name": "My Custom Home Assistant Repository",
+  "repository": "https://github.com/DoubleD-HA/hassos-addons",
+  "topics": ["home-assistant", "integration", "frontend", "custom-components"],
+  "domain": "lovelace",
+  "archive": false
 }
