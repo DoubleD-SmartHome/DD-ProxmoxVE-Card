@@ -1,0 +1,8 @@
+{
+  "name": "My Custom Lovelace Cards",
+  "repository": "https://github.com/DoubleD-HA/hassos-addonss",
+  "topics": ["home-assistant", "lovelace", "frontend", "custom-cards"],
+  "category": "Frontend",
+  "domain": "lovelace",
+  "archive": false
+}
