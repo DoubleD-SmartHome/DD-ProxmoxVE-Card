@@ -1,7 +1,0 @@
-{
-  "name": "My Custom Home Assistant Repository",
-  "repository": "https://github.com/DoubleD-HA/hassos-addons",
-  "topics": ["home-assistant", "integration", "frontend", "custom-components"],
-  "domain": "lovelace",
-  "archive": false
-}
