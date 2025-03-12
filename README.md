@@ -1,4 +1,4 @@
-# Demers Family Home Assistant Add-ons
+# DoubleD Home Assistant Add-ons
 
 This repository contains my personal add-ons for Home Assistant. Feel free to install and use the add-ons if you find them useful.
 
