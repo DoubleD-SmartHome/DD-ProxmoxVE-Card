@@ -4,5 +4,6 @@
   "topics": ["home-assistant", "lovelace", "frontend", "custom-cards"],
   "category": "Frontend",
   "domain": "lovelace",
-  "archive": false
+  "archive": false,
+  "content_in_root": false
 }
