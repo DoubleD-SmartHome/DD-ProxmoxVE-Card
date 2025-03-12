@@ -1,6 +1,5 @@
 {
-    "name": "DoubleD XBox Card",
-    "render_readme": true,
-    "filename": "dd-xbox-card.js",
-    "content_in_root": true
-  }
+  "name": "DoubleD Home Assistant Add-ons",
+  "url": "https://github.com/DoubleD-HA/hassio-addons",
+  "maintainer": "David Demers"
+}
