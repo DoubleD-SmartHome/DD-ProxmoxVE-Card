@@ -2,12 +2,4 @@
   "name": "DoubleD Proxmox Card",
   "filename": "dd-proxmoxve-card.js",
   "render_readme": true,
-  "homeassistant": "0.95.4"
-  
-  "repository": "https://github.com/DoubleD-SmartHome/DD-Proxmox-Card",
-  "topics": ["home-assistant", "lovelace", "frontend", "custom-cards"],
-  "category": "Frontend",
-  "domain": "lovelace",
-  "archive": false,
-  "content_in_root": false
 }
