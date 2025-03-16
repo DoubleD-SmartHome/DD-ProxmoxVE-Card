@@ -42,7 +42,9 @@ const result = calculateTimeDifference(STARTTIME, Date());
 	    <div class="MainAction">
 	      <div id="status" title="" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 	    </div>
-	    <div class="Unused"></div>
+	    <div class="SSL">
+	      <div id="status" title="" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/SSL_green.png');"></div>
+            </div>
 	  </div>
 	  <div class="CPU">
             <span>${RAM}%</span>
