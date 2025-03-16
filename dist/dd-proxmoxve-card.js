@@ -18,7 +18,7 @@ class DFProxmoxCard extends HTMLElement {
     const LOGO = this.config.logo ? this.config.logo : "logo";
     const STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
     const STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
-const result = calculateTimeDifference(STARTTIME, Date());
+    const result = calculateTimeDifference(STARTTIME, Date());
     const UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
     const CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
     const RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
@@ -27,6 +27,8 @@ const result = calculateTimeDifference(STARTTIME, Date());
     const NETIN = hass.states['sensor.'+this.config.device+'_network_in'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_in'].state).toFixed(2) : "unavailable";
     const NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
     const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
+    const SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
+    const SSL_STATUS = "red";
 
     this.content.innerHTML = `
 	<div class="df-proxmox-container">
@@ -43,7 +45,7 @@ const result = calculateTimeDifference(STARTTIME, Date());
 	      <div id="status" title="" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 	    </div>
 	    <div class="SSL">
-	      <div id="status" title="" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/SSL_green.png');"></div>
+	      <div id="status" title="${SSL_DATE}" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/SSL-${SSL_STATUS}.png');"></div>
             </div>
 	  </div>
 	  <div class="CPU">
@@ -97,8 +99,8 @@ customElements.define("df-proxmox-card", DFProxmoxCard);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: 'df-proxmox-card',
-  name: 'DF ProxmoxVE Card',
-  description: 'A Demers Family Proxmox VE Card for Container and VMs.',
+  name: 'DD Proxmox VE Card',
+  description: 'a DoubleD Proxmox VE Card for Container and VMs.',
   preview: true,
 });
 
