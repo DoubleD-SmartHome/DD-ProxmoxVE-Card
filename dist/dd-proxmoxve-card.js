@@ -5,7 +5,7 @@ class DFProxmoxCard extends HTMLElement {
     // Initialize the content if it's not there yet.
     if (!this.content) {
       this.innerHTML = `
-	<link type="text/css" rel="stylesheet" href="https://ha.doubled.demersfamily.cc:9500/local/community/DD-ProxmoxVE-Card/df-proxmox-card.css">
+	<link type="text/css" rel="stylesheet" href="https://ha.doubled.demersfamily.cc:9500/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
         <ha-card df>
           <div class="card-content"></div>
         </ha-card>
