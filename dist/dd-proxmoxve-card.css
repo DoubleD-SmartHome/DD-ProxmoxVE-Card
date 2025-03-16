@@ -17,6 +17,10 @@ df-proxmox-card {
 		"CPU RAM HDD Swap Network";
 }
 
+.STATS {
+	text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000;
+}
+
 .CPU {
 	grid-area: CPU;
 	padding: 5px 0 0 0;
