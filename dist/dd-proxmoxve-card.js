@@ -5,7 +5,7 @@ class DFProxmoxCard extends HTMLElement {
     // Initialize the content if it's not there yet.
     if (!this.content) {
       this.innerHTML = `
-	<link type="text/css" rel="stylesheet" href="https://ha.doubled.demersfamily.cc:9500/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
+	<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
         <ha-card df>
           <div class="card-content"></div>
         </ha-card>
@@ -40,7 +40,7 @@ const result = calculateTimeDifference(STARTTIME, Date());
 	  </div>
 	  <div class="Actions">
 	    <div class="MainAction">
-	      <div id="status" title="" class="" style="height: 100%; background: center / contain no-repeat url('/local/demersfamily/ProxmoxVE/assets/${TYPE}_${STATUS}.png');"></div>
+	      <div id="status" title="" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 	    </div>
 	    <div class="Unused"></div>
 	  </div>
