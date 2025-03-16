@@ -1,4 +1,5 @@
 {
   "name": "DoubleD Proxmox VE Card",
+  "filename": "dd-proxmoxve-card.js",
   "render_readme": true
 }
