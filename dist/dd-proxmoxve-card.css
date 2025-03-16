@@ -15,12 +15,23 @@ df-proxmox-card {
     "CPU RAM HDD Swap Network";
 }
 
-.CPU { grid-area: CPU;
-padding: 5px 0 0 0; }
+.CPU {
+	grid-area: CPU;
+	padding: 5px 0 0 0;
+	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/cpu.png'
+}
 
-.RAM { grid-area: RAM; }
+.RAM {
+	grid-area: RAM;
+	padding: 5px 0 0 0;
+	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/ram.png'
+}
 
-.HDD { grid-area: HDD; }
+.HDD {
+	grid-area: HDD;
+	padding: 5px 0 0 0;
+	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png'
+}
 
 .Logo { grid-area: Logo; }
 
