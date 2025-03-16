@@ -7,11 +7,12 @@ This repository contains a Home Assistant custom card for a Proxmox VE Integrati
 
 Here's a breakdown of all the available configuration items:
 
-Name          Optional	Default	          Description                            Values
-type          N                           Custom card type id                    custom:df-proxmox-card
-device        N                           Home Assistant device name             <device name>
-logo          N                           Card logo                              linux, frigate, homeassistant, nextcloud, rpd, vaultwarden        
-ssl           Y                           Entity ID for SSL Expiry Date          sensor.<name>
+| Name          | Optional	| Default	  | Description                            | Values
+|---------------|-----------|-----------|----------------------------------------|----------------------------------------------------------------------
+| type          | N         |           | Custom card type id                    | `custom:df-proxmox-card`
+| device        | N         |           | Home Assistant device name             | `HA device name`
+| logo          | N         |           | Card logo                              | `linux`, `frigate`, `homeassistant`, `nextcloud`, `rpd`, `vaultwarden`        
+| ssl           | Y         |           | Entity ID for SSL Expiry Date          | `sensor.<name>`
 
 ## example
 type: custom:df-proxmox-card
