@@ -48,14 +48,14 @@ class DFProxmoxCard extends HTMLElement {
 	      <div id="status" title="${SSL_DATE}" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/SSL-${SSL_STATUS}.png');"></div>
             </div>
 	  </div>
-	  <div class="CPU df-dark_supported">
+	  <div class="STATS CPU df-dark_supported">
             <span class="df-dark_supported">${RAM}%</span>
             <span>CPU</span>
 	  </div>
-	  <div class="RAM df-dark_supported">${RAM}%</div>
-	  <div class="HDD df-dark_supported">${HDD}%</div>
-	  <div class="Swap df-dark_supported">${SWP}%</div>
-	  <div class="Network df-dark_supported">
+	  <div class="STATS RAM df-dark_supported">${RAM}%</div>
+	  <div class="STATS HDD df-dark_supported">${HDD}%</div>
+	  <div class="STATS Swap df-dark_supported">${SWP}%</div>
+	  <div class="STATS Network df-dark_supported">
             ${NETIN}
             ${NETOUT}
           </div>
