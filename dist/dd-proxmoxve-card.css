@@ -25,6 +25,7 @@ df-proxmox-card {
 
 .STAT_VALUE {
 	width: 100%;
+	text-align: center;
 }
 
 .CPU {
