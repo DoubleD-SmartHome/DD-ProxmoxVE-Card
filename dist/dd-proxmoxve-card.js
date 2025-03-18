@@ -55,10 +55,7 @@ class DFProxmoxCard extends HTMLElement {
 	  <div class="STATS RAM df-dark_supported">${RAM}%</div>
 	  <div class="STATS HDD df-dark_supported"><div class="mdi mdi-backup-restore" style="height: 75px; width:75px; color:blue;"></div></div>
 	  <div class="STATS Swap df-dark_supported"><i class="mdi mdi-certificate" style="height: 75px; width:75px; color:blue;"></i></div>
-	  <div class="STATS Network df-dark_supported">
-            ${NETIN}
-            ${NETOUT}
-          </div>
+	  <div class="STATS Network df-dark_supported"><img alt="" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://brands.home-assistant.io/cert_expiry/dark_icon.png" style="visibility: initial;"></div>
 	</div>
     `;
   }
