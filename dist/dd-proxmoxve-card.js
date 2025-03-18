@@ -93,6 +93,8 @@ class DFProxmoxCard extends HTMLElement {
       grid_columns: 4,
       grid_min_rows: 2,
       grid_max_rows: 2,
+      grid_min_columns: 4,
+      grid_max_columns: 4,
     };
   }
 
