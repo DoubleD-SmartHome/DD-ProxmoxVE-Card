@@ -18,7 +18,9 @@ df-proxmox-card {
 }
 
 .STATS {
-	text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000;
+	display: grid;
+	place-items: center; /* Centers both vertically and horizontally */
+	height: 100vh; /* Full viewport height for demonstration */
 }
 
 .CPU {
