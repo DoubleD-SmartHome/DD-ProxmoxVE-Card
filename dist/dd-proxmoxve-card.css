@@ -23,6 +23,10 @@ df-proxmox-card {
 	height: 100%; /* Full viewport height for demonstration */
 }
 
+.STAT_VALUE {
+	width: 100%;
+}
+
 .CPU {
 	grid-area: CPU;
 	padding: 5px 0 0 0;
