@@ -59,13 +59,13 @@ class DFProxmoxCard extends HTMLElement {
 	  <div class="STATS RAM df-dark_supported">
    	    <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
-	  <div class="HDD df-dark_supported">
+	  <div class="STATS df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
 	  </div>
-	  <div class="Swap df-dark_supported">
+	  <div class="STATS df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
-	  <div class="Network df-dark_supported">
+	  <div class="STATS df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	</div>
