@@ -20,7 +20,7 @@ df-proxmox-card {
 .STATS {
 	display: grid;
 	place-items: center; /* Centers both vertically and horizontally */
-	height: 100vh; /* Full viewport height for demonstration */
+	height: 100%; /* Full viewport height for demonstration */
 }
 
 .CPU {
