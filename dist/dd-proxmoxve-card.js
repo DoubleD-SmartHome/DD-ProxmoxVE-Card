@@ -51,16 +51,14 @@ class DFProxmoxCard extends HTMLElement {
 	      <div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>
             </div>
 	  </div>
-	  <div class="STATS CPU df-dark_supported">
+	  <div class="CPU df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
             <div class="STAT_LABEL">CPU</div>
 	  </div>
-	  <div class="STATS RAM df-dark_supported">${RAM}%</div>
-	  <div class="STATS HDD df-dark_supported"><div class="mdi mdi-backup-restore" style="height: 75px; width:75px; color:blue;"></div>SSL 1</div>
-	  <div class="STATS Swap df-dark_supported"><i class="mdi mdi-certificate" style="height: 75px; width:75px; color:blue;"></i>SSL 2</div>
-	  <div class="STATS Network df-dark_supported">
-            <div id="icon-container"><ha-icon icon="mdi:help"></ha-icon></div>
-   	  </div>
+	  <div class="RAM df-dark_supported">${RAM}%</div>
+	  <div class="HDD df-dark_supported"></div>
+	  <div class="Swap df-dark_supported"></div>
+	  <div class="Network df-dark_supported"></div>
 	</div>
     `;
   }
