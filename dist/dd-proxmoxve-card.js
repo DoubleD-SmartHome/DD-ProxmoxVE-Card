@@ -46,7 +46,7 @@ class DFProxmoxCard extends HTMLElement {
 	    </div>
 	    <div class="SSL">
               <div id="icon-container"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>
-	      <div id="icon-container"><ha-icon icon="mdi:certificat" style="color: darkgreen;"></ha-icon></div>
+	      <div id="icon-container"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>
 	      <div id="status" title="${SSL_DATE}" class="" style="height: 100%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/SSL-${SSL_STATUS}.png');"></div>
             </div>
 	  </div>
