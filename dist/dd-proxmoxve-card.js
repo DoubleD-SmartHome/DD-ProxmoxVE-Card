@@ -53,7 +53,7 @@ class DFProxmoxCard extends HTMLElement {
             <div class="STAT_LABEL">CPU</div>
 	  </div>
 	  <div class="STATS RAM df-dark_supported">${RAM}%</div>
-	  <div class="STATS HDD df-dark_supported">${HDD}%</div>
+	  <div class="STATS HDD df-dark_supported"><div class="mdi mdi-backup-restore" style="height: 75px; width:75px; color:blue;"></div></div>
 	  <div class="STATS Swap df-dark_supported"><i class="mdi mdi-certificate" style="height: 75px; width:75px; color:blue;"></i></div>
 	  <div class="STATS Network df-dark_supported">
             ${NETIN}
