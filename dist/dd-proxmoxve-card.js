@@ -82,10 +82,10 @@ class DFProxmoxCard extends HTMLElement {
   // The rules for sizing your card in the grid in sections view
   getLayoutOptions() {
     return {
-      grid_rows: 3,
+      grid_rows: 2,
       grid_columns: 4,
-      grid_min_rows: 3,
-      grid_max_rows: 3,
+      grid_min_rows: 2,
+      grid_max_rows: 2,
     };
   }
 
