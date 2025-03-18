@@ -18,7 +18,7 @@ df-proxmox-card {
 }
 
 .STATS {
-	display: grid;
+	display: flex;
 	place-items: center; /* Centers both vertically and horizontally */
 	height: 100%; /* Full viewport height for demonstration */
 }
