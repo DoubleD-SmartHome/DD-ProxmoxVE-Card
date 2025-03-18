@@ -55,7 +55,9 @@ class DFProxmoxCard extends HTMLElement {
 	  <div class="STATS RAM df-dark_supported">${RAM}%</div>
 	  <div class="STATS HDD df-dark_supported"><div class="mdi mdi-backup-restore" style="height: 75px; width:75px; color:blue;"></div>SSL 1</div>
 	  <div class="STATS Swap df-dark_supported"><i class="mdi mdi-certificate" style="height: 75px; width:75px; color:blue;"></i>SSL 2</div>
-	  <div class="STATS Network df-dark_supported"></div>
+	  <div class="STATS Network df-dark_supported">
+            <path class="primary-path" d="M7,2H17A2,2 0 0,1 19,4V9H5V4A2,2 0 0,1 7,2M19,19A2,2 0 0,1 17,21V22H15V21H9V22H7V21A2,2 0 0,1 5,19V10H19V19M8,5V7H10V5H8M8,12V15H10V12H8Z" style="color: blue;"></path>
+   	  </div>
 	</div>
     `;
   }
