@@ -21,6 +21,8 @@ df-proxmox-card {
 	display: flex;
 	place-items: center; /* Centers both vertically and horizontally */
 	height: 100%; /* Full viewport height for demonstration */
+	background-color: #252525;
+	border-radius: 50%;
 }
 
 .STAT_VALUE {
