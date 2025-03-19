@@ -38,36 +38,36 @@ class DFProxmoxCard extends HTMLElement {
 	    <div id="logo" title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
 	  </div>
 	  <div class="Main">
-	    <div>${DEVICE_NAME}</div>
-	    <div title="Started: ${STARTUP}">${UPTIME}</div>
+	    <div class="name">${DEVICE_NAME}</div>
+	    <div class="uptime" title="Started: ${STARTUP}">${UPTIME}</div>
 	  </div>
-	  <div class="Actions">
-	    <div class="MainAction">
-	      <div id="status" title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
+	  <div class="Status">
+	    <div class="MainStatus">
+	      <div title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 	    </div>
-	    <div style="display: flex; justify-content: center; height:30px;">
+	    <div class="SubStatus" style="display: flex; justify-content: center; height:30px;">
               <div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>
 	      <div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>
               <div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
             </div>
 	  </div>
-	  <div class="STATS Stat1 df-dark_supported">
+	  <div class="Stats Stat1 df-dark_supported">
             <div class="RAM"></div>
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
 	  </div>
-	  <div class="STATS Stat2 df-dark_supported">
+	  <div class="Stats Stat2 df-dark_supported">
    	    <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
-	  <div class="STATS Stat3 df-dark_supported">
+	  <div class="Stats Stat3 df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
 	  </div>
-	  <div class="STATS Stat4 df-dark_supported">
+	  <div class="Stats Stat4 df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
-	  <div class="STATS Stat5 df-dark_supported">
+	  <div class="Stats Stat5 df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
-	  <div class="STATS Stat6 df-dark_supported">
+	  <div class="Stats Stat6 df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	</div>
