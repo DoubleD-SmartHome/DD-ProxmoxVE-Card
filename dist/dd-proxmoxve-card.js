@@ -5,33 +5,33 @@ class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
-		this.innerHTML = `
-			<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
-			<ha-card df>
-  			<div class="card-content"></div>
-    			</ha-card>
-		`;
-		this.content = this.querySelector("div");
-	}
+			this.innerHTML = `
+				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
+				<ha-card df>
+  				<div class="card-content"></div>
+    				</ha-card>
+			`;
+			this.content = this.querySelector("div");
+		}
 
-	const DEVICE_NAME = this.config.device;
-	const TYPE = DEVICE_NAME.substring(0, DEVICE_NAME.indexOf('_'));
-	const LOGO = this.config.logo ? this.config.logo : "logo";
-	const STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
-	const STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
-	const result = calculateTimeDifference(STARTTIME, Date());
-	const UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
-	const CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
-	const RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
-	const HDD = hass.states['sensor.'+this.config.device+'_disk_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_disk_used_percentage'].state).toFixed(2) : "unavailable";
-	const SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
-	const NETIN = hass.states['sensor.'+this.config.device+'_network_in'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_in'].state).toFixed(2) : "unavailable";
-	const NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
-	const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
-	const SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
-	const SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
-	const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24))
-	const SSL_STATUS = "red";
+		const DEVICE_NAME = this.config.device;
+		const TYPE = DEVICE_NAME.substring(0, DEVICE_NAME.indexOf('_'));
+		const LOGO = this.config.logo ? this.config.logo : "logo";
+		const STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
+		const STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
+		const result = calculateTimeDifference(STARTTIME, Date());
+		const UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
+		const CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
+		const RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
+		const HDD = hass.states['sensor.'+this.config.device+'_disk_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_disk_used_percentage'].state).toFixed(2) : "unavailable";
+		const SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
+		const NETIN = hass.states['sensor.'+this.config.device+'_network_in'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_in'].state).toFixed(2) : "unavailable";
+		const NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
+		const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
+		const SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
+		const SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
+		const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24))
+		const SSL_STATUS = "red";
 
     this.content.innerHTML = `
 	<div class="df-proxmox-container">
@@ -72,37 +72,38 @@ class DFProxmoxCard extends HTMLElement {
           </div>
 	</div>
     `;
-  }
+		
+  	}
 
-  // The user supplied configuration. Throw an exception and Home Assistant
-  // will render an error card.
-  setConfig(config) {
-    //if (!config.load_entity) {
-    //  throw new Error("You need to define an entity2");
-    //}
-    this.config = config;
-  }
-
-  // The height of your card. Home Assistant uses this to automatically
-  // distribute all cards over the available columns in masonry view
-  getCardSize() {
-    return 4;
-  }
-
-  // The rules for sizing your card in the grid in sections view
-  getLayoutOptions() {
-    return {
-      grid_rows: 3,
-      grid_columns: 4,
-      grid_min_rows: 3,
-      grid_max_rows: 3,
-    };
-  }
-
-  static getStubConfig() {
-    return { device: "lxc_name_number" }
-  }
-}
+	  	// The user supplied configuration. Throw an exception and Home Assistant
+	  	// will render an error card.
+	  	setConfig(config) {
+	  	  //if (!config.load_entity) {
+	    	  //  throw new Error("You need to define an entity2");
+		    //}
+		    this.config = config;
+		  }
+	
+		  // The height of your card. Home Assistant uses this to automatically
+		  // distribute all cards over the available columns in masonry view
+		  getCardSize() {
+		    return 4;
+		  }
+		
+		  // The rules for sizing your card in the grid in sections view
+		  getLayoutOptions() {
+		    return {
+		      grid_rows: 3,
+		      grid_columns: 4,
+		      grid_min_rows: 3,
+		      grid_max_rows: 3,
+		    };
+		  }
+		
+		static getStubConfig() {
+	    		return { device: "lxc_name_number" }
+	  	}
+	}
 
 customElements.define("df-proxmox-card", DFProxmoxCard);
 
