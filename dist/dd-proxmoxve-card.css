@@ -13,7 +13,7 @@ df-proxmox-card {
 	gap: 0px 0px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		"Logo Main Main Main Main Actions"
+		"Logo Main Main Main Actions Actions"
 		"Stat1 Stat2 Stat3 Stat4 Stat5 Stat6";
 }
 
