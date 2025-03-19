@@ -37,6 +37,7 @@ class DFProxmoxCard extends HTMLElement {
 	 <div class="df-proxmox-container">
 	  <div class="grid-item logo" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
 	  <div class="grid-item main no-overflow">
+   nlkdfgs;gj;joihjs;ghjffd;l;lkdj;lkfjlk;dfj;ldf
 	    <div class="no-overflow">${DEVICE_NAME}</div>
 	    <div class="no-overflow" title="Started: ${STARTUP}">${UPTIME}</div>
 	  </div>
@@ -51,7 +52,7 @@ class DFProxmoxCard extends HTMLElement {
             </div>
 	  </div>
 	  <div class="grid-item stat1 df-dark_supported">
-            S1d
+            S1e
 	  </div>
 	  <div class="grid-item stat2 df-dark_supported">
    	    <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
