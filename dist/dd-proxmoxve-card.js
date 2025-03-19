@@ -1,4 +1,4 @@
-class DFProxmoxCard extends HTMLElement {
+wclass DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
@@ -38,8 +38,8 @@ class DFProxmoxCard extends HTMLElement {
 	    <div id="logo" title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
 	  </div>
 	  <div class="grid-item main">
-	    <div class="">${DEVICE_NAME}</div>
-	    <div class="" title="Started: ${STARTUP}">${UPTIME}</div>
+	    <div class="no-overflow">${DEVICE_NAME}</div>
+	    <div class="no-overflow" title="Started: ${STARTUP}">${UPTIME}</div>
 	  </div>
 	  <div class="grid-item status">
 	    <div class="">
