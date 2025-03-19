@@ -31,6 +31,7 @@
             /* padding: 10px; */
             /*border: 1px solid #ddd;*/
 	    margin: auto;
+	    width: 100%;
 
 	    /* Ensure content doesn't exceed the grid cell */
     	    /*overflow: hidden;*/ /* Hides overflowing content */
