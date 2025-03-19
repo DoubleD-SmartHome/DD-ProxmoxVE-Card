@@ -30,24 +30,40 @@ df-proxmox-card {
 	text-align: center;
 }
 
-.CPU {
-	grid-area: CPU;
+.Stat1 {
+	grid-area: Stat1;
 	padding: 5px 0 0 0;
 	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/cpu.png');
 }
 
-.RAM {
-	grid-area: RAM;
+.Stat2 {
+	grid-area: Stat2;
 	padding: 5px 0 0 0;
 	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/ram.png');
 }
 
-.HDD {
-	grid-area: HDD;
+.Stat3 {
+	grid-area: Stat3;
 	padding: 5px 0 0 0;
 	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
 }
 
+.Stat4 {
+	grid-area: Stat4;
+	padding: 5px 0 0 0;
+	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
+}
+.Stat5 {
+	grid-area: Stat5;
+	padding: 5px 0 0 0;
+	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
+}
+
+.Stat6 {
+	grid-area: Stat6;
+	padding: 5px 0 0 0;
+	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
+}
 .Logo {
 	grid-area: Logo;
 }
