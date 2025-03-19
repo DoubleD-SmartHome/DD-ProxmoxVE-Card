@@ -16,7 +16,9 @@ df-proxmox-card {
 		"Logo Main Main Main Actions Actions"
 		"Stat1 Stat2 Stat3 Stat4 Stat5 Stat6";
 }
-
+.Logo {
+	grid-area: Logo;
+}
 .STATS {
 	display: flex;
 	place-items: center; /* Centers both vertically and horizontally */
@@ -63,9 +65,6 @@ df-proxmox-card {
 	grid-area: Stat6;
 	padding: 5px 0 0 0;
 	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
-}
-.Logo {
-	grid-area: Logo;
 }
 
 .Main {
