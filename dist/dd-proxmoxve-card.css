@@ -38,7 +38,10 @@
     	    white-space: nowrap; /* Prevents text from wrapping to a new line */
         }
 
-        .logo { grid-area: Logo; }
+        .logo {
+		grid-area: Logo;
+		margin: 5px;
+	}
         .main {
 		grid-area: Main;
 		padding: 5px;
