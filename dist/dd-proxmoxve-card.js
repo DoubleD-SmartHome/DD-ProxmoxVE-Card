@@ -39,8 +39,7 @@ class DFProxmoxCard extends HTMLElement {
 	  </div>
 	  <div class="Main">
 	    <div class="Name">${DEVICE_NAME}</div>
-	    <div class="Uptime">${STARTUP}</div>
-	    <div class="Other">${UPTIME}</div>
+	    <div class="Uptime" title="Started: ${STARTUP}">${UPTIME}</div>
 	  </div>
 	  <div class="Actions">
 	    <div class="MainAction">
