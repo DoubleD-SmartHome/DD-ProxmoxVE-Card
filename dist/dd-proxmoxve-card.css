@@ -8,13 +8,13 @@ df-proxmox-card {
 
 .df-proxmox-container {  
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	gap: 0px 0px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		"Logo Main Main Main Actions"
-		"CPU RAM HDD Swap Network";
+		"Logo Main Main Main Main Actions"
+		"Stat1 Stat2 Stat3 Stat4 Stat5 Stat6";
 }
 
 .STATS {
