@@ -20,7 +20,7 @@
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 10px;
+            /* padding: 10px; */
             border: 1px solid #ddd;
 
 	    /* Ensure content doesn't exceed the grid cell */
