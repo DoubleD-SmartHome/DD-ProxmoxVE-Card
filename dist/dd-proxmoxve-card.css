@@ -80,12 +80,6 @@ df-proxmox-card {
 	grid-area: Main;
 }
 
-.Name { grid-area: Name; }
-
-.Uptime { grid-area: Uptime; }
-
-.Other { grid-area: Other; }
-
 .Network { grid-area: Network; }
 
 .Swap { grid-area: Swap; }
