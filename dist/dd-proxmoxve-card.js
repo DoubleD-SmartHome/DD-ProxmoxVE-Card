@@ -1,4 +1,5 @@
 class DFProxmoxCard extends HTMLElement {
+	// 2025-03-19
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
@@ -52,7 +53,7 @@ class DFProxmoxCard extends HTMLElement {
             </div>
 	  </div>
 	  <div class="grid-item stat1 df-dark_supported">
-            S1
+            S1a
 	  </div>
 	  <div class="grid-item stat2 df-dark_supported">
    	    <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
