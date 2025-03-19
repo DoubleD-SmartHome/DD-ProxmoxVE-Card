@@ -30,6 +30,7 @@
             text-align: center;
             /* padding: 10px; */
             border: 1px solid #ddd;
+	    margin: auto;
 
 	    /* Ensure content doesn't exceed the grid cell */
     	    overflow: hidden; /* Hides overflowing content */
@@ -38,7 +39,11 @@
         }
 
         .logo { grid-area: Logo; }
-        .main {grid-area: Main; }
+        .main {
+		grid-area: Main;
+		padding: 5px;
+		text-align: left;
+	}
         .status { grid-area: Status; }
         
         .stat1 { grid-area: Stat1; }
