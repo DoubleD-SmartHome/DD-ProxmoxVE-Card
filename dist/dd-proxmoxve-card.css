@@ -22,6 +22,11 @@
             text-align: center;
             padding: 10px;
             border: 1px solid #ddd;
+
+	    /* Ensure content doesn't exceed the grid cell */
+    	    overflow: hidden; /* Hides overflowing content */
+    	    text-overflow: ellipsis; /* Adds "..." to truncated text */
+    	    white-space: nowrap; /* Prevents text from wrapping to a new line */
         }
 
         .logo { grid-area: Logo; }
