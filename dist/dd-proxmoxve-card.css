@@ -20,16 +20,12 @@ df-proxmox-card {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 20px;
+            padding: 10px;
             border: 1px solid #ddd;
         }
 
         .logo { grid-area: Logo; }
-        .main {
-        	grid-area: Main;
- 
-        }
+        .main { grid-area: Main; }
         .status { grid-area: Status; }
         
         .stat1 { grid-area: Stat1; }
