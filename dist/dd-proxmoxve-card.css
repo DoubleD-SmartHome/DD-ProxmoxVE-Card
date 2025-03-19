@@ -6,111 +6,38 @@ df-proxmox-card {
 	height: 100%;
 }
 
-.df-proxmox-container {  
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	gap: 0px;
-	grid-template-areas:
-		"Logo Main Main Main Status Status"
-		"Stat1 Stat2 Stat3 Stat4 Stat5 Stat6";
-}
+        .df-proxmox-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6 equal-width columns */
+            grid-template-rows: repeat(2, 1fr); /* 2 equal-height rows */
+            gap: 10px; /* Space between grid items */
+            grid-template-areas: 
+                "Logo Main Main Main Status Status"
+                "Stat1 Stat2 Stat3 Stat4 Stat5 Stat6"; /* Define grid areas */
+        }
 
-.grid-item {
-	text-align: center;
-	border: 1px solid #ddd;
-}
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            border: 1px solid #ddd;
+        }
 
-.Logo {
-	grid-area: Logo;
-}
-
-.Main {
-	grid-area: Main;
-	
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	gap: 0px;
-	grid-template-areas:
-		"name name name"
-		"uptime uptime uptime"
-}
-
-	.name {
-		grid-area: Name;
-	}
-	.uptime {
-		grid-area: Uptime;
-	}
-
-.Status {
-	grid-area: Actions;
-
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(2, 1fr);
-	gap: 0px;
-	grid-template-areas:
-		"MainStatus"
-		"SubStatus";
-}
-
-	.MainStatus {
-		grid-area: MainAction;
-	}
-
-	.SubStatus {
-		grid-area: MainAction;
-	}
-
-.Stats {
-	display: flex;
-	place-items: center; /* Centers both vertically and horizontally */
-	height: 100%; /* Full viewport height for demonstration */
-	background-color: #252525;
-	border-radius: 50%;
-}
-
-.Stat1 {
-	grid-area: Stat1;
-	padding: 5px 0 0 0;
-	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/cpu.png');
-}
-
-.Stat2 {
-	grid-area: Stat2;
-	padding: 5px 0 0 0;
-	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/ram.png');
-}
-
-.Stat3 {
-	grid-area: Stat3;
-	padding: 5px 0 0 0;
-	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
-}
-
-.Stat4 {
-	grid-area: Stat4;
-	padding: 5px 0 0 0;
-	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
-}
-.Stat5 {
-	grid-area: Stat5;
-	padding: 5px 0 0 0;
-	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
-}
-
-.Stat6 {
-	grid-area: Stat6;
-	padding: 5px 0 0 0;
-	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
-}
-
-.STAT_VALUE {
-	width: 100%;
-	text-align: center;
-}
+        .logo { grid-area: Logo; }
+        .main {
+        	grid-area: Main;
+ 
+        }
+        .status { grid-area: Status; }
+        
+        .stat1 { grid-area: Stat1; }
+        .stat2 { grid-area: Stat2; }
+        .stat3 { grid-area: Stat3; }
+        .stat4 { grid-area: Stat4; }
+        .stat5 { grid-area: Stat5; }
+        .stat6 { grid-area: Stat6; }
 
 /* Dark Mode CSS Code */
 @media (prefers-color-scheme: dark) {
