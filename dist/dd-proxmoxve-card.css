@@ -16,6 +16,13 @@
                 "Stat1 Stat2 Stat3 Stat4 Stat5 Stat6"; /* Define grid areas */
         }
 
+.no-overflow {
+	    /* Ensure content doesn't exceed the grid cell */
+    	    overflow: hidden; /* Hides overflowing content */
+    	    text-overflow: ellipsis; /* Adds "..." to truncated text */
+    	    white-space: nowrap; /* Prevents text from wrapping to a new line */
+}
+
         .grid-item {
             background-color: #4CAF50;
             color: white;
@@ -30,7 +37,7 @@
         }
 
         .logo { grid-area: Logo; }
-        .main { grid-area: Main; }
+        .main {grid-area: Main; }
         .status { grid-area: Status; }
         
         .stat1 { grid-area: Stat1; }
