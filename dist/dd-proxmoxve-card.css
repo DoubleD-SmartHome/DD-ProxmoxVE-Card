@@ -8,28 +8,68 @@ df-proxmox-card {
 
 .df-proxmox-container {  
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	gap: 0px 0px;
-	grid-auto-flow: row;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0px;
 	grid-template-areas:
-		"Logo Main Main Main Actions Actions"
+		"Logo Main Main Main Status Status"
 		"Stat1 Stat2 Stat3 Stat4 Stat5 Stat6";
 }
+
+.grid-item {
+	text-align: center;
+	border: 1px solid #ddd;
+}
+
 .Logo {
 	grid-area: Logo;
 }
-.STATS {
+
+.Main {
+	grid-area: Main;
+	
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0px;
+	grid-template-areas:
+		"name name name"
+		"uptime uptime uptime"
+}
+
+	.name {
+		grid-area: Name;
+	}
+	.uptime {
+		grid-area: Uptime;
+	}
+
+.Status {
+	grid-area: Actions;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0px;
+	grid-template-areas:
+		"MainStatus"
+		"SubStatus";
+}
+
+	.MainStatus {
+		grid-area: MainAction;
+	}
+
+	.SubStatus {
+		grid-area: MainAction;
+	}
+
+.Stats {
 	display: flex;
 	place-items: center; /* Centers both vertically and horizontally */
 	height: 100%; /* Full viewport height for demonstration */
 	background-color: #252525;
 	border-radius: 50%;
-}
-
-.STAT_VALUE {
-	width: 100%;
-	text-align: center;
 }
 
 .Stat1 {
@@ -67,36 +107,10 @@ df-proxmox-card {
 	background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/stats/hdd.png');
 }
 
-.Main {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	gap: 0px 0px;
-	grid-auto-flow: row;
-	grid-template-areas:
-		"Name Name Name"
-		"Uptime Uptime Uptime"
-	grid-area: Main;
+.STAT_VALUE {
+	width: 100%;
+	text-align: center;
 }
-
-.Network { grid-area: Network; }
-
-.Swap { grid-area: Swap; }
-
-.Actions {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "MainAction"
-    "Unused";
-  grid-area: Actions;
-}
-
-.MainAction { grid-area: MainAction;  }
-
-.Unused { grid-area: Unused; }
 
 /* Dark Mode CSS Code */
 @media (prefers-color-scheme: dark) {
