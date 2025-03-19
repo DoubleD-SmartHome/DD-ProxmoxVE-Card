@@ -34,7 +34,6 @@ class DFProxmoxCard extends HTMLElement {
 		const SSL_STATUS = "red";
 
     this.content.innerHTML = `
- <div class="myheight">
 	 <div class="df-proxmox-container">
 	  <div class="grid-item logo">
 	    <div id="logo" title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
@@ -54,7 +53,7 @@ class DFProxmoxCard extends HTMLElement {
             </div>
 	  </div>
 	  <div class="grid-item stat1 df-dark_supported">
-            S1a
+            S1b
 	  </div>
 	  <div class="grid-item stat2 df-dark_supported">
    	    <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
@@ -72,7 +71,6 @@ class DFProxmoxCard extends HTMLElement {
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	</div>
- </div>
     `;
 		
   	}
