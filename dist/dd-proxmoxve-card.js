@@ -35,6 +35,7 @@ class DFProxmoxCard extends HTMLElement {
 
     this.content.innerHTML = `
 	<div class="df-proxmox-container">
+ <div class="myheight">
 	  <div class="grid-item logo">
 	    <div id="logo" title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
 	  </div>
@@ -70,6 +71,7 @@ class DFProxmoxCard extends HTMLElement {
 	  <div class="grid-item stat6 df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
+</div>
 	</div>
     `;
 		
