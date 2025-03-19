@@ -77,7 +77,6 @@ df-proxmox-card {
 	grid-template-areas:
 		"Name Name Name"
 		"Uptime Uptime Uptime"
-		"Other Other Other";
 	grid-area: Main;
 }
 
