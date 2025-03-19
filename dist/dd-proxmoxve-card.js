@@ -38,8 +38,8 @@ class DFProxmoxCard extends HTMLElement {
 	    <div id="logo" title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
 	  </div>
 	  <div class="Main">
-	    <div class="Name">${DEVICE_NAME}</div>
-	    <div class="Uptime" title="Started: ${STARTUP}">${UPTIME}</div>
+	    <div>${DEVICE_NAME}</div>
+	    <div title="Started: ${STARTUP}">${UPTIME}</div>
 	  </div>
 	  <div class="Actions">
 	    <div class="MainAction">
