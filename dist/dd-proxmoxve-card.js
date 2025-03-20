@@ -33,6 +33,13 @@ class DFProxmoxCard extends HTMLElement {
 		const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24))
 		const SSL_STATUS = "red";
 
+		const deviceId = this.config.device;
+		const entities = Object.keys(hass.states).filter((entityId) => {
+			const entity = hass.states[entityId];
+			return (
+				entity.attributes.device_id === deviceId && entityId.startsWith("button.")
+			);
+		});
 		
     this.content.innerHTML = `
 	 <div class="df-proxmox-container">
@@ -70,10 +77,11 @@ class DFProxmoxCard extends HTMLElement {
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	  <div class="grid-item actions">
+            ${entities}
             <button class="button" click=${this._press}>
               Shutdown
             </button>
-	    <div id="shutdown" title="" class="button">Shutdown8</div>
+	    <div id="shutdown" title="" class="button">Shutdown10</div>
 	  </div>
 	</div>
     `;
