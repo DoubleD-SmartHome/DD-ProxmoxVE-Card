@@ -77,11 +77,17 @@ class DFProxmoxCard extends HTMLElement {
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	  <div class="grid-item actions">
-            ${entities}
+            ${entities
+              .map(
+                (entityId) => `
+                  <li class="entity" data-entity="${entityId}">${entityId}</li>
+                `
+	      )
+              .join("")
+	    }
             <button id="shutdown" title="" class="button">
-              Shutdown
+              Shutdown 1
             </button>
-	    <div id="shutdown2" title="" class="button">Shutdown11</div>
 	  </div>
 	</div>
     `;
