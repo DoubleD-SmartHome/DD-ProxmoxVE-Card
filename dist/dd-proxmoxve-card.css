@@ -15,7 +15,7 @@
             grid-template-areas: 
                 "Logo Main Main Main Status Status"
                 "Stat1 Stat2 Stat3 Stat4 Stat5 Stat6"
-		"Actions Actions Actions Actions Actions Actions; /* Define grid areas */
+		"Actions Actions Actions Actions Actions Actions"; /* Define grid areas */
         }
 
 	.no-overflow {
