@@ -73,7 +73,7 @@ class DFProxmoxCard extends HTMLElement {
             <button class="button" click=${this._press}>
               Shutdown
             </button>
-	    <div id="shutdown" title="" class="button">Shutdown4</div>
+	    <div id="shutdown" title="" class="button">Shutdown5</div>
             Actions Coming Soon...
 	  </div>
 	</div>
@@ -81,7 +81,7 @@ class DFProxmoxCard extends HTMLElement {
 
 	const lockButton = this.querySelector('#shutdown');
 	lockButton.addEventListener('click', () => {
-		hass.callService('lock', press, {
+		hass.callService('button', 'press', {
 			entity_id: this.config.shutdown
 		});
 	});
