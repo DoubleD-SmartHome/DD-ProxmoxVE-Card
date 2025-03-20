@@ -52,7 +52,7 @@ class DFProxmoxCard extends HTMLElement {
             </div>
 	  </div>
 	  <div class="grid-item stat1 df-dark_supported">
-            S1g
+            <div class="STAT_VALUE df-dark_supported">S1h</div>
 	  </div>
 	  <div class="grid-item stat2 df-dark_supported">
    	    <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
@@ -82,9 +82,8 @@ class DFProxmoxCard extends HTMLElement {
 
 	_press(ev) {
 		alert("Pressed");
-		ev.stopPropagation();
 		this.hass.callService("button", "press", {
-			entity_id: button.lxc_base_local_101_shutdown,
+			entity_id: this.config.shutdown,
 		});
 	}
 
