@@ -86,7 +86,7 @@ class DFProxmoxCard extends HTMLElement {
               .join("")
 	    }
             <button id="shutdown" title="" class="button">
-              Shutdown 1
+              Shutdown 2
             </button>
 	  </div>
 	</div>
