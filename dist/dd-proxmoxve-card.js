@@ -70,7 +70,7 @@ class DFProxmoxCard extends HTMLElement {
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	  <div class="grid-item actions">
-            <button class="button" @click=${this._press}>
+            <button class="button" click=${this._press}>
               Shutdown
             </button>
             Actions Coming Soon...
@@ -81,8 +81,7 @@ class DFProxmoxCard extends HTMLElement {
   	}
 
 	_press(ev) {
-		const currentDate = new Date();
-     		alert(`Today's date is: ${currentDate.toDateString()}`);
+        alert("1");
 	}
 
 	  	// The user supplied configuration. Throw an exception and Home Assistant
