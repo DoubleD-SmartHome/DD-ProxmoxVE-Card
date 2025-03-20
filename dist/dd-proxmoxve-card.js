@@ -41,8 +41,8 @@ class DFProxmoxCard extends HTMLElement {
 	    <div class="no-overflow" title="Started: ${STARTUP}">${UPTIME}</div>
 	  </div>
 	  <div class="grid-item status">
-	    <div class="" style="display: flex; justify-content: center; height:30px;">
-	      <div title="" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
+	    <div class="${STATUS}" style="display: flex; justify-content: center; height:30px;">
+	      <div title="${STATUS}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 	    </div>
 	    <div class="" style="display: flex; justify-content: center; height:30px;">
               <div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>
