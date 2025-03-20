@@ -73,7 +73,7 @@ class DFProxmoxCard extends HTMLElement {
             <button class="button" click=${this._press}>
               Shutdown
             </button>
-	    <div id="shutdown" title="" class="button">Shutdown5</div>
+	    <div id="shutdown" title="" class="button">Shutdown6</div>
             Actions Coming Soon...
 	  </div>
 	</div>
