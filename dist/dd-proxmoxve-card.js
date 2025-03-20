@@ -32,14 +32,17 @@ class DFProxmoxCard extends HTMLElement {
 		const SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
 		const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24))
 		const SSL_STATUS = "red";
+		
+const entities = hass.states;
+console.log(entities); // This will log the list of entities
 
-		const deviceId = this.config.device;
-		const entities = Object.keys(hass.states).filter((entityId) => {
-			const entity = hass.states[entityId];
-			return (
-				entity.attributes.device_id === deviceId && entityId.startsWith("button.")
-			);
-		});
+		//const deviceId = this.config.device;
+		//const entities = Object.keys(hass.states).filter((entityId) => {
+		//	const entity = hass.states[entityId];
+		//	return (
+		//		entity.attributes.device_id === deviceId && entityId.startsWith("button.")
+		//	);
+		//});
 		
     this.content.innerHTML = `
 	 <div class="df-proxmox-container">
@@ -86,7 +89,7 @@ class DFProxmoxCard extends HTMLElement {
               .join("")
 	    }
             <button id="shutdown" title="" class="button">
-              Shutdown 2
+              Shutdown 3
             </button>
 	  </div>
 	</div>
