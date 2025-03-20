@@ -81,10 +81,7 @@ class DFProxmoxCard extends HTMLElement {
   	}
 
 	_press(ev) {
-		alert("Pressed");
-		this.hass.callService("button", "press", {
-			entity_id: this.config.shutdown,
-		});
+		alert(${STATUS});
 	}
 
 	  	// The user supplied configuration. Throw an exception and Home Assistant
