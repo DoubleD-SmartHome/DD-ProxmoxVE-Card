@@ -52,7 +52,7 @@ class DFProxmoxCard extends HTMLElement {
             </div>
 	  </div>
 	  <div class="grid-item stat1 df-dark_supported">
-            <div class="STAT_VALUE df-dark_supported">S1h</div>
+            <div class="STAT_VALUE df-dark_supported">S1i</div>
 	  </div>
 	  <div class="grid-item stat2 df-dark_supported">
    	    <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
@@ -81,7 +81,7 @@ class DFProxmoxCard extends HTMLElement {
   	}
 
 	_press(ev) {
-        alert("1");
+        System.out.println("Hello, World!");
 	}
 
 	  	// The user supplied configuration. Throw an exception and Home Assistant
