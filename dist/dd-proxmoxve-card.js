@@ -81,7 +81,8 @@ class DFProxmoxCard extends HTMLElement {
   	}
 
 	_press(ev) {
-		alert(${STATUS});
+		const currentDate = new Date();
+     		alert(`Today's date is: ${currentDate.toDateString()}`);
 	}
 
 	  	// The user supplied configuration. Throw an exception and Home Assistant
