@@ -69,6 +69,9 @@ class DFProxmoxCard extends HTMLElement {
 	  <div class="grid-item stat6 df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
+	  <div class="grid-item actions">
+            Actions Coming Soon...
+	  </div>
 	</div>
     `;
 		
