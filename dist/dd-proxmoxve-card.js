@@ -73,8 +73,7 @@ class DFProxmoxCard extends HTMLElement {
             <button class="button" click=${this._press}>
               Shutdown
             </button>
-	    <div id="shutdown" title="" class="button">Shutdown7</div>
-            Actions Coming Soon...
+	    <div id="shutdown" title="" class="button">Shutdown8</div>
 	  </div>
 	</div>
     `;
@@ -89,7 +88,9 @@ class DFProxmoxCard extends HTMLElement {
   	}
 
 	_press(ev) {
-        System.out.println("Hello, World!");
+        	hass.callService('button', 'press', {
+			entity_id: this.config.shutdown
+		});
 	}
 
 	  	// The user supplied configuration. Throw an exception and Home Assistant
