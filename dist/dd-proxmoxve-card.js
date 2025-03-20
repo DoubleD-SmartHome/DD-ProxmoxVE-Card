@@ -33,6 +33,7 @@ class DFProxmoxCard extends HTMLElement {
 		const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24))
 		const SSL_STATUS = "red";
 
+		
     this.content.innerHTML = `
 	 <div class="df-proxmox-container">
 	  <div class="grid-item logo" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
@@ -80,6 +81,7 @@ class DFProxmoxCard extends HTMLElement {
   	}
 
 	_press(ev) {
+		alert("Pressed");
 		ev.stopPropagation();
 		this.hass.callService("button", "press", {
 			entity_id: button.lxc_base_local_101_shutdown,
