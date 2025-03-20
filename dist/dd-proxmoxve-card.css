@@ -58,6 +58,8 @@
         .stat5 { grid-area: Stat5; }
         .stat6 { grid-area: Stat6; }
 
+	.actions { grid-area: Actions; }
+
 /* Dark Mode CSS Code */
 @media (prefers-color-scheme: dark) {
 	.df-dark_supported {
