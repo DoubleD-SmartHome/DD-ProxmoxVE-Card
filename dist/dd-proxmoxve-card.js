@@ -41,7 +41,7 @@ class DFProxmoxCard extends HTMLElement {
 	    <div class="no-overflow" title="Started: ${STARTUP}">${UPTIME}</div>
 	  </div>
 	  <div class="grid-item status">
-	    <div class="">
+	    <div class="" style="display: flex; justify-content: center; height:30px;">
 	      <div title="" class="" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 	    </div>
 	    <div class="" style="display: flex; justify-content: center; height:30px;">
