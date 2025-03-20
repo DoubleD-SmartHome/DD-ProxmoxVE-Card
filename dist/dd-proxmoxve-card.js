@@ -69,12 +69,22 @@ class DFProxmoxCard extends HTMLElement {
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	  <div class="grid-item actions">
+            <button class="button" @click=${this._press}>
+              Shutdown
+            </button>
             Actions Coming Soon...
 	  </div>
 	</div>
     `;
 		
   	}
+
+	_press(ev) {
+		ev.stopPropagation();
+		this.hass.callService("button", "press", {
+			entity_id: button.lxc_base_local_101_shutdown,
+		});
+	}
 
 	  	// The user supplied configuration. Throw an exception and Home Assistant
 	  	// will render an error card.
