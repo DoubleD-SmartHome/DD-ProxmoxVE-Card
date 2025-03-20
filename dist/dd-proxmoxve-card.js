@@ -78,10 +78,10 @@ class DFProxmoxCard extends HTMLElement {
           </div>
 	  <div class="grid-item actions">
             ${entities}
-            <button class="button" click=${this._press}>
+            <button id="shutdown" title="" class="button">
               Shutdown
             </button>
-	    <div id="shutdown" title="" class="button">Shutdown10</div>
+	    <div id="shutdown2" title="" class="button">Shutdown11</div>
 	  </div>
 	</div>
     `;
