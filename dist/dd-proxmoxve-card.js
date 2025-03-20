@@ -1,5 +1,5 @@
 class DFProxmoxCard extends HTMLElement {
-	// 2025-03-19
+	// 2025-03-19 @ 2:13pm
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
