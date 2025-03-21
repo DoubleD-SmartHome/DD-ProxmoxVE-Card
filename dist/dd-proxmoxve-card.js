@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		const VERSION="0.00.009";
+		const VERSION="0.00.010";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
@@ -19,32 +19,33 @@ class DFProxmoxCard extends HTMLElement {
 		const TYPE = DEVICE_NAME.substring(0, DEVICE_NAME.indexOf('_'));
 		const LOGO = this.config.logo ? this.config.logo : "logo";
 		const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
+		LET STARTTIME, STARTUP, result, UPTIME, CPU, RAM, HDD, SWP, NETIN, NETOUT, SSL_DATE, SSL_EXP_SECONDS, SSL_EXO_DAYS;
 		if (STATUS==="on") {
-			const STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
-			const STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
-			const result = calculateTimeDifference(STARTTIME, Date());
-			const UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
-			const CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
-			const RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
-			const HDD = hass.states['sensor.'+this.config.device+'_disk_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_disk_used_percentage'].state).toFixed(2) : "unavailable";
-			const SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
-			const NETIN = hass.states['sensor.'+this.config.device+'_network_in'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_in'].state).toFixed(2) : "unavailable";
-			const NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
-			const SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
-			const SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
-			const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
-			const SSL_STATUS = "red";
+			STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
+			STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
+			result = calculateTimeDifference(STARTTIME, Date());
+			UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
+			CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
+			RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
+			HDD = hass.states['sensor.'+this.config.device+'_disk_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_disk_used_percentage'].state).toFixed(2) : "unavailable";
+			SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
+			NETIN = hass.states['sensor.'+this.config.device+'_network_in'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_in'].state).toFixed(2) : "unavailable";
+			NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
+			SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
+			SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
+			SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
+			SSL_STATUS = "red";
 		}
 		else {
-			const UPTIME = "Not running...";
-			const CPU = "--.-";
-			const RAM = "--.-";
-			const HDD = "--.-";
-			const SWP = "--.-";
-			const NETIN = "--.-";
-			const NETOUT = "--.-";
-			const SSL_DATE = "unavailable";
-			const SSL_STATUS = "unavailable";
+			UPTIME = "Not running...";
+			CPU = "--.-";
+			RAM = "--.-";
+			HDD = "--.-";
+			SWP = "--.-";
+			NETIN = "--.-";
+			NETOUT = "--.-";
+			SSL_DATE = "unavailable";
+			SSL_STATUS = "unavailable";
 		}
 		
 		this.content.innerHTML = `
