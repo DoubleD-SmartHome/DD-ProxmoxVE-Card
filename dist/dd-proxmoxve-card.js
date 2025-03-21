@@ -107,10 +107,10 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
    		Actions:
           </div>
 	  <div class="grid-item actions">
-            <button id="ActionShutdown" title="Start" class="button" ${STATUS == 'on' ? 'Disabled' : ''}><ha-icon icon="mdi:play"></ha-icon></button>
-	    <button id="ActionStop" title="Stop" class="button" ${STATUS == 'on' ? '' : 'Disabled'}><ha-icon icon="mdi:stop"></ha-icon></button>
-	    <button id="ActionShutdown" title="Shutdown" class="button" ${STATUS == 'on' ? '' : 'Disabled'}><ha-icon icon="mdi:power"></ha-icon></button>
-            <button id="ActionReboot" title="Reboot" class="button" ${STATUS == 'on' ? '' : 'Disabled'}><ha-icon icon="mdi:restart"></ha-icon></button>
+            <button id="ActionShutdown" title="Start" class="button" ${STATUS == 'on' ? 'disabled' : ''}><ha-icon icon="mdi:play"></ha-icon></button>
+	    <button id="ActionStop" title="Stop" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:stop"></ha-icon></button>
+	    <button id="ActionShutdown" title="Shutdown" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:power"></ha-icon></button>
+            <button id="ActionReboot" title="Reboot" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:restart"></ha-icon></button>
 	  </div>
 	</div>
     `;
@@ -118,7 +118,7 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
 	const actionButtons = this.querySelectorAll('[id^="Action"]');
 	actionButtons.forEach((actionButton) => {
 	  actionButton.addEventListener('click', (event) => {
-	    const actionid = 'button.'+this.config.device+'_'+event.currentTarget.getAttribute('title');
+	    const actionid = 'button.' + this.config.device + '_' + event.currentTarget.getAttribute('title');
 	    if (confirm("Event: "+actionid)) == true) {
 	      hass.callService('button', 'press', {
 	        entity_id: actionid
