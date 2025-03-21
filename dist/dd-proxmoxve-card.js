@@ -50,6 +50,16 @@ const deviceEntities = Object.keys(hass.states).filter(
 console.log('Device:', this.config.device);		
 console.log('Entities for device:', deviceEntities);
 console.log('Entities:', Object.keys(hass.states));
+
+const entityId = "binary_sensor.lxc_base_local_101_status"; // Replace with your entity ID
+const deviceId = hass.states[entityId]?.attributes?.device_id;
+
+if (deviceId) {
+  console.log(`Device ID for entity ${entityId}: ${deviceId}`);
+} else {
+  console.log(`Device ID not found for entity ${entityId}`);
+}
+
 		
     this.content.innerHTML = `
 	 <div class="df-proxmox-container">
@@ -89,7 +99,7 @@ console.log('Entities:', Object.keys(hass.states));
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 12
+              Shutdown 13
             </button>
 	  </div>
 	</div>
