@@ -9,7 +9,7 @@ class DFProxmoxCard extends HTMLElement {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
 				<ha-card df>
-  				<div class="card-content"></div>
+  					<div class="card-content"></div>
     				</ha-card>
 			`;
 			this.content = this.querySelector("div");
