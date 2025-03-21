@@ -104,8 +104,8 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	  <div class="grid-item actions">
-            <div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></div>
-	    <div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></div>
+            <div id="icon-container" style="width: 32px; float: left;"  title=""><ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></div>
+	    <div id="icon-container" style="width: 32px; float: left;"  title=""><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></div>
             <button id="shutdown" title="" class="button"><ha-icon icon="mdi:start" style="color: goldenrod;"></button>
 	  </div>
 	</div>
