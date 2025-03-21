@@ -51,8 +51,8 @@ const deviceEntities = Object.keys(hass.states).filter(
 //console.log('Entities for device:', deviceEntities);
 //console.log('get Dev_id:', hass.states['sensor.'+this.config.device+'_disk_used_percentage'].attributes.device_id);
 
-//const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
-//const deviceId = hass.states[entityId]?.attributes?.device_id;
+const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
+const deviceId = hass.states[entityId]?.attributes.device_id;
 //if (deviceId) {
 //  console.log(`Device ID for entity ${entityId}: ${deviceId}`);
 //} else {
@@ -98,7 +98,7 @@ const deviceEntities = Object.keys(hass.states).filter(
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 18
+              Shutdown 19
             </button>
 	  </div>
 	</div>
