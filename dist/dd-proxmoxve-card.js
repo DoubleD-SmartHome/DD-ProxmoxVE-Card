@@ -82,7 +82,7 @@ const entities = hass.states;
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 5
+              Shutdown 6
             </button>
 	  </div>
 	</div>
@@ -90,9 +90,11 @@ const entities = hass.states;
 
 	const lockButton = this.querySelector('#shutdown');
 	lockButton.addEventListener('click', () => {
-		hass.callService('button', 'press', {
-			entity_id: this.config.shutdown
-		});
+		if (confirm('Are you sure?') == true) {
+			hass.callService('button', 'press', {
+				entity_id: this.config.shutdown
+			});
+		}
 	});
 		
   	}
