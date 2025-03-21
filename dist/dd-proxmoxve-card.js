@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		const VERSION="0.00.003";
+		//const VERSION="0.00.004";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
@@ -49,7 +49,7 @@ class DFProxmoxCard extends HTMLElement {
 		
 		this.content.innerHTML = `
   			<div class="df-proxmox-container">
-				<div class="grid-item logo" title="${VERSION}" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
+				<div class="grid-item logo" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
 				<div class="grid-item main no-overflow">
 					<div class="no-overflow">${DEVICE_NAME}</div>
 					<div class="no-overflow" title="Started: ${STARTUP}">${UPTIME}</div>
