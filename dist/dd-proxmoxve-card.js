@@ -72,7 +72,7 @@ class DFProxmoxCard extends HTMLElement {
 					Actions:
 				</div>
 				<div class="grid-item actions">
-					<button id="ActionStart" title="Start" class="button" ${STATUS == 'on' ? 'disabled' : ''}>4<ha-icon icon="mdi:play"></ha-icon></button>
+					<button id="ActionStart" title="Start" class="button" ${STATUS == 'on' ? 'disabled' : ''}>5<ha-icon icon="mdi:play"></ha-icon></button>
 					<button id="ActionStop" title="Stop" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:stop"></ha-icon></button>
 					<button id="ActionShutdown" title="Shutdown" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:power"></ha-icon></button>
 					<button id="ActionReboot" title="Reboot" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:restart"></ha-icon></button>
@@ -85,9 +85,7 @@ class DFProxmoxCard extends HTMLElement {
 			actionButton.addEventListener('click', (event) => {
 				const actionid = 'button.'+this.config.device+'_'+event.currentTarget.getAttribute('title');
 				if (confirm("Event: "+actionid) == true) {
-					hass.callService('button', 'press', {
-						entity_id: button.lxc_base_local_101_stop
-					});
+
 				}
 			});
 		});
