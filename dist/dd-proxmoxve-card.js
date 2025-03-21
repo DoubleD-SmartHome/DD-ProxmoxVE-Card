@@ -34,7 +34,7 @@ class DFProxmoxCard extends HTMLElement {
 		const SSL_STATUS = "red";
 		
 const entities = hass.states;
-console.log(entities); // This will log the list of entities
+//console.log(entities); // This will log the list of entities
 
 		//const deviceId = this.config.device;
 		//const entities = Object.keys(hass.states).filter((entityId) => {
@@ -80,16 +80,9 @@ console.log(entities); // This will log the list of entities
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
 	  <div class="grid-item actions">
-            ${entities
-              .map(
-                (entityId) => `
-                  <li class="entity" data-entity="${entityId}">${entityId}</li>
-                `
-	      )
-              .join("")
-	    }
+            
             <button id="shutdown" title="" class="button">
-              Shutdown 3
+              Shutdown 5
             </button>
 	  </div>
 	</div>
