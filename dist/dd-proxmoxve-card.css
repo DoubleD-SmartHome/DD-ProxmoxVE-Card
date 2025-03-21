@@ -64,7 +64,7 @@
 
 	.actions button {
 		color: goldenrod;
-	|
+	}
 		
 	.actions button:disabled {
 		color: gray !important; 
