@@ -33,7 +33,7 @@ class DFProxmoxCard extends HTMLElement {
 		const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24))
 		const SSL_STATUS = "red";
 		
-const entities = hass.states;
+//const entities = hass.states;
 //console.log(entities); // This will log the list of entities
 
 		//const deviceId = this.config.device;
@@ -52,8 +52,8 @@ const entities = hass.states;
 //console.log('get Dev_id:', hass.states['sensor.'+this.config.device+'_disk_used_percentage'].attributes.device_id);
 
 //const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
-const deviceId = hass.states[this.config.ssl].attributes[device_id];
-console.log(`work Device ID for entity ${this.config.ssl|: ${deviceId}`);
+const deviceId = hass.states[this.config.ssl].attributes.device_id;
+console.log(`work Device ID for entity ${this.config.ssl}: ${deviceId}`);
 		
 //if (deviceId) {
 //  console.log(`Device ID for entity ${entityId}: ${deviceId}`);
@@ -100,7 +100,7 @@ console.log(`work Device ID for entity ${this.config.ssl|: ${deviceId}`);
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 23
+              Shutdown 25
             </button>
 	  </div>
 	</div>
