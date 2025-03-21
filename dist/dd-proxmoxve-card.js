@@ -51,7 +51,7 @@ console.log('Device:', this.config.device);
 console.log('Entities for device:', deviceEntities);
 console.log('Entities:', Object.keys(hass.states));
 
-const entityId = "sensor.lxc_base_local_101_node"; // Replace with your entity ID
+const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
 const deviceId = hass.states[entityId]?.attributes?.device_id;
 
 if (deviceId) {
