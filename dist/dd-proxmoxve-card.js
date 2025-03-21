@@ -118,7 +118,7 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
 	actionButtons.forEach((actionButton) => {
 	  actionButton.addEventListener('click', () => {
 	    const buttonAction = actionButton.getAttribute('title')
-	    if (confirm('Are you sure? (${buttonAction})') == true) {
+	    if (confirm(this.getAttribute('title')) == true) {
 	      hass.callService('button', 'press', {
 	        entity_id: this.config.shutdown
 	      });
