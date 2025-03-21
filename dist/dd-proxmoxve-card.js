@@ -47,18 +47,17 @@ const entities = hass.states;
 const deviceEntities = Object.keys(hass.states).filter(
   (entityId) => hass.states[entityId].attributes.device_id === "b87ccacf7febea6302bc90be98592cc4"
 );
-console.log('Device:', this.config.device);		
+console.log('Device:', "b87ccacf7febea6302bc90be98592cc4");		
 console.log('Entities for device:', deviceEntities);
-console.log('Entities:', Object.keys(hass.states));
+console.log('get Dev_id:', hass.states['sensor.'+this.config.device+'_disk_used_percentage'].attributes.device_id;
 
-const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
-const deviceId = hass.states[entityId]?.attributes?.device_id;
-
-if (deviceId) {
-  console.log(`Device ID for entity ${entityId}: ${deviceId}`);
-} else {
-  console.log(`Device ID not found for entity ${entityId}`);
-}
+//const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
+//const deviceId = hass.states[entityId]?.attributes?.device_id;
+//if (deviceId) {
+//  console.log(`Device ID for entity ${entityId}: ${deviceId}`);
+//} else {
+//  console.log(`Device ID not found for entity ${entityId}`);
+//}
 
 		
     this.content.innerHTML = `
@@ -99,7 +98,7 @@ if (deviceId) {
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 15
+              Shutdown 16
             </button>
 	  </div>
 	</div>
