@@ -47,6 +47,7 @@ const entities = hass.states;
 const deviceEntities = Object.keys(hass.states).filter(
   (entityId) => hass.states[entityId].attributes.device_id === this.config.device
 );
+console.log('Device:', this.config.device);		
 console.log('Entities for device:', deviceEntities);
 		
     this.content.innerHTML = `
@@ -87,7 +88,7 @@ console.log('Entities for device:', deviceEntities);
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 10
+              Shutdown 11
             </button>
 	  </div>
 	</div>
