@@ -45,10 +45,11 @@ const entities = hass.states;
 		//});
 
 const deviceEntities = Object.keys(hass.states).filter(
-  (entityId) => hass.states[entityId].attributes.device_id === this.config.device
+  (entityId) => hass.states[entityId].attributes.device_id === this.config.device2
 );
 console.log('Device:', this.config.device);		
 console.log('Entities for device:', deviceEntities);
+console.log('Entities:', Object.keys(hass.states));
 		
     this.content.innerHTML = `
 	 <div class="df-proxmox-container">
@@ -88,7 +89,7 @@ console.log('Entities for device:', deviceEntities);
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 11
+              Shutdown 12
             </button>
 	  </div>
 	</div>
