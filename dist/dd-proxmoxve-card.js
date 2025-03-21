@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		const VERSION="0.00.007";
+		const VERSION="0.00.008";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
