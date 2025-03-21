@@ -85,7 +85,9 @@ class DFProxmoxCard extends HTMLElement {
 			actionButton.addEventListener('click', (event) => {
 				const actionid = 'button.'+this.config.device+'_'+event.currentTarget.getAttribute('title');
 				if (confirm("Event: "+actionid) == true) {
-
+					hass.callService('button', 'press', {
+						entity_id: actionid,
+					});
 				}
 			});
 		});
