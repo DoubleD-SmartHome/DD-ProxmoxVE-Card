@@ -45,7 +45,7 @@ const entities = hass.states;
 		//});
 
 const deviceEntities = Object.keys(hass.states).filter(
-  (entityId) => hass.states[entityId].attributes.device_id === this.config.device2
+  (entityId) => hass.states[entityId].attributes.device_id === "b87ccacf7febea6302bc90be98592cc4"
 );
 console.log('Device:', this.config.device);		
 console.log('Entities for device:', deviceEntities);
@@ -99,7 +99,7 @@ if (deviceId) {
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 14
+              Shutdown 15
             </button>
 	  </div>
 	</div>
