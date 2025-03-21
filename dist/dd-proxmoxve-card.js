@@ -58,6 +58,7 @@ const entityId = 'sensor.sun_next_setting'; // Replace with your entity ID
 const deviceId = hass.states[entityId].attributes.device_id;
 
 console.log(`Device ID for '${entityId}':`, deviceId);
+console.log("Attributes for entity:", hass.states[entityId].attributes);
 //console.log(`work Device ID for entity ${this.config.ssl}: ${deviceId}`);
 		
 //if (deviceId) {
@@ -105,7 +106,7 @@ console.log(`Device ID for '${entityId}':`, deviceId);
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 30c ${deviceId}
+              Shutdown 30d ${deviceId}
             </button>
 	  </div>
 	</div>
