@@ -52,7 +52,7 @@ class DFProxmoxCard extends HTMLElement {
 //console.log('get Dev_id:', hass.states['sensor.'+this.config.device+'_disk_used_percentage'].attributes.device_id);
 
 //const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
-const deviceId = hass.states[this.config.ssl].attributes.device_id;
+//const deviceId = hass.states[this.config.ssl].attributes.device_id;
 
 const entityId = 'sensor.dev_ha_doubled_demersfamily_cc_9999_cert_expiry'; // Replace with your entity ID
 const deviceId = getDeviceId(hass, entityId);
@@ -105,7 +105,7 @@ console.log(`Device ID for '${entityId}':`, deviceId);
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 30 ${deviceId}
+              Shutdown 30a ${deviceId}
             </button>
 	  </div>
 	</div>
