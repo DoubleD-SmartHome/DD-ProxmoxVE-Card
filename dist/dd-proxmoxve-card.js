@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		//const VERSION="0.00.004";
+		const VERSION="0.00.004";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
@@ -86,7 +86,7 @@ class DFProxmoxCard extends HTMLElement {
 					Actions:
 				</div>
 				<div class="grid-item actions">
-					<button id="ActionStart" title="Start" class="button" ${STATUS == 'on' ? 'disabled' : ''}>5<ha-icon icon="mdi:play"></ha-icon></button>
+					<button id="ActionStart" title="Start" class="button" ${STATUS == 'on' ? 'disabled' : ''}><ha-icon icon="mdi:play"></ha-icon></button>
 					<button id="ActionStop" title="Stop" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:stop"></ha-icon></button>
 					<button id="ActionShutdown" title="Shutdown" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:power"></ha-icon></button>
 					<button id="ActionReboot" title="Reboot" class="button" ${STATUS == 'on' ? '' : 'disabled'}><ha-icon icon="mdi:restart"></ha-icon></button>
