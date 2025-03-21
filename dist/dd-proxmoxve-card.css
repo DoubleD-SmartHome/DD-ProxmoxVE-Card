@@ -62,6 +62,10 @@
 
 	.actions { grid-area: Actions; }
 
+	.actions {
+		color: goldenrod;
+	|
+		
 	.actions button:disabled {
 		color: gray;
 	}
