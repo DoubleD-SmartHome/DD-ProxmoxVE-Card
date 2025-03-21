@@ -62,7 +62,7 @@
 
 	.actions { grid-area: Actions; }
 
-	.actions {
+	.actions button {
 		color: goldenrod;
 	|
 		
