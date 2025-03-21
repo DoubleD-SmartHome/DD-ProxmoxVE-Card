@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		const VERSION="0.00.002";
+		const VERSION="0.00.003";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
@@ -19,7 +19,7 @@ class DFProxmoxCard extends HTMLElement {
 		const TYPE = DEVICE_NAME.substring(0, DEVICE_NAME.indexOf('_'));
 		const LOGO = this.config.logo ? this.config.logo : "logo";
 		const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
-		if (STATUS==="on") {
+		//if (STATUS==="on") {
 			const STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
 			const STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
 			const result = calculateTimeDifference(STARTTIME, Date());
@@ -34,18 +34,18 @@ class DFProxmoxCard extends HTMLElement {
 			const SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
 			const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
 			const SSL_STATUS = "red";
-		}
-		else {
-			const UPTIME = "Not running...";
-			const CPU = "--.-";
-			const RAM = "--.-";
-			const HDD = "--.-";
-			const SWP = "--.-";
-			const NETIN = "--.-";
-			const NETOUT = "--.-";
-			const SSL_DATE = "unavailable";
-			const SSL_STATUS = "unavailable";
-		}
+		//}
+		//else {
+		//	const UPTIME = "Not running...";
+		//	const CPU = "--.-";
+		//	const RAM = "--.-";
+		//	const HDD = "--.-";
+		//	const SWP = "--.-";
+		//	const NETIN = "--.-";
+		//	const NETOUT = "--.-";
+		//	const SSL_DATE = "unavailable";
+		//	const SSL_STATUS = "unavailable";
+		//}
 		
 		this.content.innerHTML = `
   			<div class="df-proxmox-container">
@@ -106,7 +106,6 @@ class DFProxmoxCard extends HTMLElement {
 			});
 		});
   	}
-
 
 	// The user supplied configuration. Throw an exception and Home Assistant
 	// will render an error card.
