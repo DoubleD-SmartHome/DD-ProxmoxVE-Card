@@ -107,9 +107,10 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
    		Actions:
           </div>
 	  <div class="grid-item actions">
-            <button id="ActionPause" title="pause" class="button">4<ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></button>
+            <button id="ActionShutdown" title="Start" class="button"><ha-icon icon="mdi:play" style="color: goldenrod;"></ha-icon></button>
 	    <button id="ActionStop" title="Stop" class="button"><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></button>
-            <button id="ActionShutdown" title="Shutdown" class="button"><ha-icon icon="mdi:play" style="color: goldenrod;"></ha-icon></button>
+	    <button id="ActionShutdown" title="Shutdown" class="button"><ha-icon icon="mdi:power" style="color: goldenrod;"></ha-icon></button>
+            <button id="ActionReboot" title="Reboot" class="button"><ha-icon icon="mdi:restart" style="color: goldenrod;"></ha-icon></button>
 	  </div>
 	</div>
     `;
