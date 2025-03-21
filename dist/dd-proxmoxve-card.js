@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		const VERSION="0.00.001";
+		const VERSION="0.00.002";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
@@ -32,7 +32,7 @@ class DFProxmoxCard extends HTMLElement {
 			const NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
 			const SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
 			const SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
-			const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24))
+			const SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
 			const SSL_STATUS = "red";
 		}
 		else {
