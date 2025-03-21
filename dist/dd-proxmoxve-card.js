@@ -44,16 +44,16 @@ const entities = hass.states;
 		//	);
 		//});
 
-const deviceEntities = Object.keys(hass.states).filter(
-  (entityId) => hass.states[entityId].attributes.device_id === "b87ccacf7febea6302bc90be98592cc4"
-);
+//const deviceEntities = Object.keys(hass.states).filter(
+//  (entityId) => hass.states[entityId].attributes.device_id === "b87ccacf7febea6302bc90be98592cc4"
+//);
 //console.log('Device:', "b87ccacf7febea6302bc90be98592cc4");		
 //console.log('Entities for device:', deviceEntities);
 //console.log('get Dev_id:', hass.states['sensor.'+this.config.device+'_disk_used_percentage'].attributes.device_id);
 
-const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
-const deviceId = hass.states[entityId]?.attributes.device_id;
-console.log(`work Device ID for entity ${entityId}: ${deviceId}`);
+//const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
+const deviceId = hass.states[this.config.ssl].attributes[device_id];
+console.log(`work Device ID for entity ${this.config.ssl|: ${deviceId}`);
 		
 //if (deviceId) {
 //  console.log(`Device ID for entity ${entityId}: ${deviceId}`);
@@ -100,7 +100,7 @@ console.log(`work Device ID for entity ${entityId}: ${deviceId}`);
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 22
+              Shutdown 23
             </button>
 	  </div>
 	</div>
