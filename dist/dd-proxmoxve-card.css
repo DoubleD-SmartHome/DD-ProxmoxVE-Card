@@ -62,6 +62,9 @@
 
 	.actions { grid-area: Actions; }
 
+	.actions button:disabled {
+		color: gray;
+	}
 /* Dark Mode CSS Code */
 @media (prefers-color-scheme: dark) {
 	.df-dark_supported {
