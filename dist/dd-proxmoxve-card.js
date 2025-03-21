@@ -106,7 +106,7 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 30f ${deviceId}
+              Shutdown 30g ${deviceId}
             </button>
 	  </div>
 	</div>
