@@ -103,10 +103,13 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
 	  <div class="grid-item stat6 df-dark_supported">
             <div class="STAT_VALUE df-dark_supported">${RAM}%</div>
           </div>
+	  <div class="grid-item actionlabel">
+   		Actions:
+          </div>
 	  <div class="grid-item actions">
-            <div id="icon-container" style="width: 32px;"  title=""><ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></div>
-	    <div id="icon-container" style="width: 32px;"  title=""><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></div>
-            <button id="shutdown" title="" class="button"><ha-icon icon="mdi:play" style="color: goldenrod;"></button>
+            <button id="ActionPause" title="" class="button"><ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></button>
+	    <button id="ActionStop" title="" class="button"><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></button>
+            <button id="ActionShutdown" title="" class="button"><ha-icon icon="mdi:play" style="color: goldenrod;"></button>
 	  </div>
 	</div>
     `;
