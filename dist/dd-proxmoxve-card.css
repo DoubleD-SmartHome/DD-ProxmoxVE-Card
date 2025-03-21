@@ -58,7 +58,7 @@
         .stat5 { grid-area: Stat5; }
         .stat6 { grid-area: Stat6; }
 
-	.actionlabel { griod-area: ActionLabel; }
+	.actionlabel { grid-area: ActionLabel; }
 
 	.actions { grid-area: Actions; }
 
