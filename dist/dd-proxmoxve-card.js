@@ -82,7 +82,7 @@ const entities = hass.states;
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 6
+              Shutdown 7
             </button>
 	  </div>
 	</div>
