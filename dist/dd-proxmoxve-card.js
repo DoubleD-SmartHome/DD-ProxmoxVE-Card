@@ -43,6 +43,11 @@ const entities = hass.states;
 		//		entity.attributes.device_id === deviceId && entityId.startsWith("button.")
 		//	);
 		//});
+
+const deviceEntities = Object.keys(hass.states).filter(
+  (entityId) => hass.states[entityId].attributes.device_id === this.config.device
+);
+console.log('Entities for device:', deviceEntities);
 		
     this.content.innerHTML = `
 	 <div class="df-proxmox-container">
@@ -82,7 +87,7 @@ const entities = hass.states;
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 7
+              Shutdown 10
             </button>
 	  </div>
 	</div>
