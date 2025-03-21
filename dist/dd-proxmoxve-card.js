@@ -53,6 +53,11 @@ class DFProxmoxCard extends HTMLElement {
 
 //const entityId = "b87ccacf7febea6302bc90be98592cc4"; // Replace with your entity ID
 const deviceId = hass.states[this.config.ssl].attributes.device_id;
+
+const entityId = 'sensor.dev_ha_doubled_demersfamily_cc_9999_cert_expiry'; // Replace with your entity ID
+const deviceId = getDeviceId(hass, entityId);
+
+console.log(`Device ID for '${entityId}':`, deviceId);
 //console.log(`work Device ID for entity ${this.config.ssl}: ${deviceId}`);
 		
 //if (deviceId) {
@@ -100,7 +105,7 @@ const deviceId = hass.states[this.config.ssl].attributes.device_id;
 	  <div class="grid-item actions">
             
             <button id="shutdown" title="" class="button">
-              Shutdown 26 ${deviceId}
+              Shutdown 30 ${deviceId}
             </button>
 	  </div>
 	</div>
@@ -164,6 +169,12 @@ window.customCards.push({
   preview: true,
 });
 
+function getDeviceId(hass, entityId) {
+    if (hass.states[entityId] && hass.states[entityId].attributes.device_id) {
+        return hass.states[entityId].attributes.device_id;
+    }
+    return `Device ID not found for entity '${entityId}'`;
+}
   function calculateTimeDifference(startDate, endDate) {
     // Convert dates to milliseconds
     const start = new Date(startDate).getTime();
