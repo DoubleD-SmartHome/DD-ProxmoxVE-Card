@@ -107,9 +107,9 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
    		Actions:
           </div>
 	  <div class="grid-item actions">
-            <button id="ActionPause" title="" class="button"><ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></button>
-	    <button id="ActionStop" title="" class="button"><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></button>
-            <button id="ActionShutdown" title="" class="button"><ha-icon icon="mdi:play" style="color: goldenrod;"></ha-icon></button>
+            <button id="ActionPause" title="Pause" class="button"><ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></button>
+	    <button id="ActionStop" title="Stop" class="button"><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></button>
+            <button id="ActionShutdown" title="Shutdown" class="button"><ha-icon icon="mdi:play" style="color: goldenrod;"></ha-icon></button>
 	  </div>
 	</div>
     `;
@@ -117,7 +117,8 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
 	const actionButtons = this.querySelectorAll('[id^="Action"]');
 	actionButtons.forEach((actionButton) => {
 	  actionButton.addEventListener('click', () => {
-	    if (confirm('Are you sure?') == true) {
+	    const buttonAction = actionButton.getAttribute('title')
+	    if (confirm('Are you sure? (${buttonAction})') == true) {
 	      hass.callService('button', 'press', {
 	        entity_id: this.config.shutdown
 	      });
