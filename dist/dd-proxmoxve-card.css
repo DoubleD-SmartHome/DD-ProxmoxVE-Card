@@ -67,7 +67,7 @@
 	|
 		
 	.actions button:disabled {
-		color: gray;
+		color: gray !important; 
 	}
 /* Dark Mode CSS Code */
 @media (prefers-color-scheme: dark) {
