@@ -118,10 +118,10 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
 	const actionButtons = this.querySelectorAll('[id^="Action"]');
 	actionButtons.forEach((actionButton) => {
 	  actionButton.addEventListener('click', (event) => {
-	    if (confirm(event.target.title) == true) {
-	      const actionid = 'button.'+this.config.device+'_'+event.target.title;
+	    const actionid = 'button.'+this.config.device+'_'+event.target.title;
+	    if (confirm(actionid) == true) {
 	      hass.callService('button', 'press', {
-	        entity_id: this.config.shutdown
+	        entity_id: actionid
 	      });
             }
 	  });
