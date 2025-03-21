@@ -107,7 +107,7 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
    		Actions:
           </div>
 	  <div class="grid-item actions">
-            <button id="ActionPause" title="Pause" class="button"><ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></button>
+            <button id="ActionPause" title="pause" class="button">1<ha-icon icon="mdi:pause" style="color: goldenrod;"></ha-icon></button>
 	    <button id="ActionStop" title="Stop" class="button"><ha-icon icon="mdi:stop" style="color: goldenrod;"></ha-icon></button>
             <button id="ActionShutdown" title="Shutdown" class="button"><ha-icon icon="mdi:play" style="color: goldenrod;"></ha-icon></button>
 	  </div>
@@ -117,8 +117,7 @@ console.log("Attributes for entity:", hass.states[entityId].attributes);
 	const actionButtons = this.querySelectorAll('[id^="Action"]');
 	actionButtons.forEach((actionButton) => {
 	  actionButton.addEventListener('click', () => {
-	    const buttonAction = actionButton.getAttribute('title')
-	    if (confirm(this.attr('title')) == true) {
+	    if (confirm(this.getAttribute('title')) == true) {
 	      hass.callService('button', 'press', {
 	        entity_id: this.config.shutdown
 	      });
