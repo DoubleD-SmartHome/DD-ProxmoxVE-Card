@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.052";
+		const VERSION="0.00.053";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -63,15 +63,15 @@ class DFProxmoxCard extends HTMLElement {
 						<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>
 						<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
 					</div>
-				</div>
-    				<div id="stats" class="grid-item stats">
-					<div class="stat borderRed">	
+				</div>						
 		`;
 
 		stats.forEach((stat) => {
 			myHTML += `
-   				<div class="stat_label">1</div>
-				<div class="stat_value">2</div>
+   				<div class="stat borderRed">
+	   				<div class="stat_label">1</div>
+					<div class="stat_value">2</div>
+     				</div>
    			`;
 		});
 		/*
@@ -86,7 +86,6 @@ class DFProxmoxCard extends HTMLElement {
 		});
 		*/
 		myHTML += `
-  					</div>
 					<div class="stat borderRed">
     						<div class="stat_label">RAM</div>
 						<div class="stat_value">${RAM}</div>
