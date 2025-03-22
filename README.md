@@ -13,7 +13,7 @@ This repository contains a Home Assistant custom card for a Proxmox VE Integrati
 ## Minimum Home Assistant version
 Home Assistant Core version `2025.3.3` to `2025.3.3` is required.
 
-## Installation
+## Installation`
 
 Add this repository `https://github.com/DoubleD-SmartHome/DD-ProxmoxVE-Card/` as a HACS custom repositories using type `Dashboard`
 
@@ -22,13 +22,15 @@ Add this repository `https://github.com/DoubleD-SmartHome/DD-ProxmoxVE-Card/` as
 Here's a breakdown of all the available configuration items:
 
 | Name          | Optional	| Default	  | Description                            | Values
-|---------------|-----------|-----------|----------------------------------------|----------------------------------------------------------------------
+|---------------|-----------|-----------|----------------------------------------|--------------------------------------------------------------------------------------------
 | type          | N         |           | Custom card type id                    | `custom:df-proxmox-card`
 | device        | N         |           | Home Assistant device name             | `HA device name`
 | logo          | N         |           | Card logo                              | `linux`, `frigate`, `homeassistant`, `nextcloud`, `rpd`, `vaultwarden`        
 | ssl           | Y         |           | Entity ID for SSL Expiry Date *        | `sensor.<name>`
 | backup        | Y         |           | Entity ID for Last Backup Date         | `sensor.<name>`
-| console       | Y         |           | Entity ID for Console Check            | `sensor.<name>`
+| console       | Y         |           | Entity ID for Console Check            | `sensor.<name>`.
+| stats         | Y         |           | Stats Group                            | n/a
+|   - stat      | Y         |           | Stat type (can be used up to 6 times   | `cpu_used`, `disk_used_percentage`, `memory_used_percentage`, `network_in`, `network_out`
 
 \* Tested using Home Assistant's `Certificate Expiry` integration
 
@@ -38,4 +40,7 @@ type: custom:df-proxmox-card
 device: lxc_base_local_101
 logo: linux
 ssl: sensor.www_ha_mydomain_com_8123_cert_expiry
+stats:
+  - stat: cpu_used
+  - stat: memory_used_percentage
 ```
