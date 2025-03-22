@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.064";
+		const VERSION="0.00.065";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -70,10 +70,11 @@ class DFProxmoxCard extends HTMLElement {
 		`;
 
 		stats.forEach((stat) => {
+			let myStatValue = hass.states['sensor.'+this.config.device+'_'+stat['stat']] ? hass.formatEntityState(hass.states['sensor.'+this.config.device+'_'+stat['stat']]) : "unavailable";
 			myHTML += `
    				<div class="stat borderRed" style="width: 75px; float: left; margin: 0 10px 0 10px;" title="">
 	   				<div class="stat_label">${stat['stat']}</div>
-					<div class="stat_value">${CPU}</div>
+					<div class="stat_value">${myStatValr}</div>
      				</div>
    			`;
 		});
