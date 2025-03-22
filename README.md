@@ -3,7 +3,7 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://hacs.xyz)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/DoubleD-SmartHome/DD-ProxmoxVE-Card)
 
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DoubleD-SmartHome/DD-ProxmoxVE-Card/total)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DoubleD-SmartHome/DD-ProxmoxVE-Card/total?)
 
 
 This repository contains a Home Assistant custom card for a Proxmox VE Integration, with a few other misc indicators. 
