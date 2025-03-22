@@ -1,5 +1,5 @@
 	/* Layout */
-	/* 2025-03-22 7:45a */
+	/* 2025-03-22 7:57a */
 
 	df-proxmox-card {
 	    display: grid;
@@ -66,6 +66,7 @@
 	.borderRed {
 		border-radius: 25px;
 		border: 2px solid red;
+		background: #690808;
 	}
 
 	.actionlabel { grid-area: ActionLabel; }
