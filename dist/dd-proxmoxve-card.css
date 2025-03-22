@@ -1,5 +1,5 @@
 	/* Layout */
-	/* 2025-03-22 7:21a */
+	/* 2025-03-22 7:26a */
 
 	df-proxmox-card {
 	    display: grid;
@@ -14,7 +14,7 @@
             /* gap: 10px; /* Space between grid items */
             grid-template-areas: 
                 "Logo Main Main Main Status Status"
-                "Stat1 Stat2 Stat3 Stat4 Stat5 Stat6"
+                "Stats Stats Stats Stats Stats Stats"
 		"ActionLabel ActionLabel Actions Actions Actions Actions"; /* Define grid areas */
         }
 
@@ -52,18 +52,12 @@
         .status { grid-area: Status; }
 
 	.stats {
+		grid-area: Stats
 		height: 40px;
 	}
 
 	.stat_label {}
 	.stat_value {}
-
-        .stat1 { grid-area: Stat1; }
-        .stat2 { grid-area: Stat2; }
-        .stat3 { grid-area: Stat3; }
-        .stat4 { grid-area: Stat4; }
-        .stat5 { grid-area: Stat5; }
-        .stat6 { grid-area: Stat6; }
 
 	.borderRed {
 		border-radius: 25px;
