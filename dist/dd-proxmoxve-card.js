@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.061";
+		const VERSION="0.00.063";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -22,7 +22,9 @@ class DFProxmoxCard extends HTMLElement {
 			STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
 			result = calculateTimeDifference(STARTTIME, Date());
 			UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
-			CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
+			//CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
+			CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? hass.formatEntityState(hass.states['sensor.'+this.config.device+'_cpu_used']) : "unavailable";
+			
 			RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
 			HDD = hass.states['sensor.'+this.config.device+'_disk_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_disk_used_percentage'].state).toFixed(2) : "unavailable";
 			SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
@@ -69,7 +71,7 @@ class DFProxmoxCard extends HTMLElement {
 
 		stats.forEach((stat) => {
 			myHTML += `
-   				<div class="stat borderRed" style="width: 75px; float: left; margin: 0 10px 0 10px;" title="${hass.formatEntityState(hass.states['sensor.'+this.config.device+'_cpu_used'])}">
+   				<div class="stat borderRed" style="width: 75px; float: left; margin: 0 10px 0 10px;" title="">
 	   				<div class="stat_label">${stat['stat']}</div>
 					<div class="stat_value">${RAM}</div>
      				</div>
