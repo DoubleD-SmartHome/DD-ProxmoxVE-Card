@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		const VERSION="0.00.012";
+		const VERSION="0.00.013";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
@@ -38,12 +38,12 @@ class DFProxmoxCard extends HTMLElement {
 		}
 		else {
 			UPTIME = "Not running...";
-			CPU = "--.-";
-			RAM = "--.-";
-			HDD = "--.-";
-			SWP = "--.-";
-			NETIN = "--.-";
-			NETOUT = "--.-";
+			CPU = "- - -";
+			RAM = "- - -";
+			HDD = "- - -";
+			SWP = "- - -";
+			NETIN = "- - -";
+			NETOUT = "- - -";
 			SSL_DATE = "unavailable";
 			SSL_STATUS = "unavailable";
 		}
