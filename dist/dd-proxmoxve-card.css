@@ -53,7 +53,6 @@
 
         .stat1 {
 		grid-area: Stat1;
-
 		height: 40px;
 	}
         .stat2 { grid-area: Stat2; }
