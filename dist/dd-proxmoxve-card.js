@@ -44,7 +44,8 @@ class DFProxmoxCard extends HTMLElement {
 			SSL_DATE = "unavailable";
 			SSL_STATUS = "unavailable";
 		}
-		
+		const stats = this.config.stats;
+        	const statValues = {};		
 		this.content.innerHTML = `
   			<div class="df-proxmox-container">
 				<div class="grid-item logo" title="Card Version: ${VERSION}" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
@@ -62,11 +63,7 @@ class DFProxmoxCard extends HTMLElement {
 						<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
 					</div>
 				</div>
-    				<div class="grid-item stats">
-					<div class="stat borderRed">
-    						<div class="stat_label">RAM</div>
-						<div class="stat_value">${RAM}</div>
-					</div>
+    				<div id="stats" class="grid-item stats">
      				</div>
 				<div class="grid-item actionlabel">
 					Actions:
@@ -79,6 +76,15 @@ class DFProxmoxCard extends HTMLElement {
 				</div>
 			</div>
 		`;
+		const statsTag = document.getElementById("stats");
+		stats.forEach((stat) => {
+			htmltag = '
+				<div class="stat borderRed">
+    					<div class="stat_label">RAM</div>
+					<div class="stat_value">${RAM}</div>
+				</div>';
+			statsTag.append(htmltag);
+		});
 		
 		const actionButtons = this.querySelectorAll('[id^="Action"]');
 		actionButtons.forEach((actionButton) => {
