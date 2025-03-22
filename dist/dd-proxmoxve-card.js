@@ -3,7 +3,7 @@ class DFProxmoxCard extends HTMLElement {
 	// Whenever the state changes, a new `hass` object is set. Use this to
 	// update your content.
 	set hass(hass) {
-		const VERSION="0.00.014";
+		const VERSION="0.00.015";
 		// Initialize the content if it's not there yet.
 		if (!this.content) {
 			this.innerHTML = `
@@ -100,7 +100,7 @@ class DFProxmoxCard extends HTMLElement {
 			actionButton.addEventListener('click', (event) => {
 				const actionid = 'button.'+this.config.device+'_'+event.currentTarget.getAttribute('title');
 				if (confirm("Event: "+actionid) == true) {
-					this.hass.callService("button", "press", {
+					hass.callService("button", "press", {
 						entity_id: actionid,
 					}).then(() => {
 						confirm("Service call executed successfully!");
