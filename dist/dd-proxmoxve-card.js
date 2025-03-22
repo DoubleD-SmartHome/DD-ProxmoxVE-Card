@@ -19,7 +19,7 @@ class DFProxmoxCard extends HTMLElement {
 		const TYPE = DEVICE_NAME.substring(0, DEVICE_NAME.indexOf('_'));
 		const LOGO = this.config.logo ? this.config.logo : "logo";
 		const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
-		let STARTTIME, STARTUP, result, UPTIME, CPU, RAM, HDD, SWP, NETIN, NETOUT, SSL_DATE, SSL_EXP_SECONDS, SSL_EXO_DAYS;
+		let STARTTIME, STARTUP, result, UPTIME, CPU, RAM, HDD, SWP, NETIN, NETOUT, SSL_DATE, SSL_EXP_SECONDS, SSL_EXO_DAYS, SSL_STATUS;
 		if (STATUS==="on") {
 			STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
 			STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
