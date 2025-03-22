@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.042";
+		const VERSION="0.00.043";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -67,8 +67,10 @@ class DFProxmoxCard extends HTMLElement {
     				<div id="stats" class="grid-item stats">
 		`;
 
-		myHTML +- "";
-		/*
+		stats.forEach((stat) => {
+			myHTML +- "";
+		});
+			/*
 		stats.forEach((stat) => {
 			let htmltag += `*`;
 			let htmltag = `
