@@ -69,7 +69,7 @@ class DFProxmoxCard extends HTMLElement {
 
 		stats.forEach((stat) => {
 			myHTML += `
-   				<div class="stat borderRed" style="width: 75px; float: left; margin: 0 10px 0 10px;" title="${hass.formatEntityState(hass.states['sensor.'+this.config.device+'_cpu_used'].state)}">
+   				<div class="stat borderRed" style="width: 75px; float: left; margin: 0 10px 0 10px;" title="${hass.formatEntityState(hass.states['sensor.'+this.config.device+'_cpu_used'])}">
 	   				<div class="stat_label">${stat['stat']}</div>
 					<div class="stat_value">${RAM}</div>
      				</div>
