@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.016";
+		const VERSION="0.00.017";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -34,7 +34,7 @@ class DFProxmoxCard extends HTMLElement {
 			SSL_STATUS = "red";
 		}
 		else {
-			UPTIME = "Not running...";
+			UPTIME = "Uptime: (Not running...)";
 			CPU = "- - -";
 			RAM = "- - -";
 			HDD = "- - -";
