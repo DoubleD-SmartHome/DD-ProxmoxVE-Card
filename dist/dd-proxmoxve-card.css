@@ -51,7 +51,11 @@
 	}
         .status { grid-area: Status; }
         
-        .stat1 { grid-area: Stat1; }
+        .stat1 {
+		grid-area: Stat1;
+		border-radius: 25px;
+		border: 2px solid #73AD21;
+	}
         .stat2 { grid-area: Stat2; }
         .stat3 { grid-area: Stat3; }
         .stat4 { grid-area: Stat4; }
