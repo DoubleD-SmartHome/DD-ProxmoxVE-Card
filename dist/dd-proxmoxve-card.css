@@ -51,10 +51,11 @@
 	}
         .status { grid-area: Status; }
 
-        .stat1 {
-		grid-area: Stat1;
+	.statss {
 		height: 40px;
 	}
+
+        .stat1 { grid-area: Stat1; }
         .stat2 { grid-area: Stat2; }
         .stat3 { grid-area: Stat3; }
         .stat4 { grid-area: Stat4; }
