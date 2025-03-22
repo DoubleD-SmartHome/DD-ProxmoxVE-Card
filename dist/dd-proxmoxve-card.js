@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.040";
+		const VERSION="0.00.041";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -45,7 +45,8 @@ class DFProxmoxCard extends HTMLElement {
 			SSL_STATUS = "unavailable";
 		}
 		const stats = this.config.stats;
-        	const statValues = {};		
+        	const statValues = {};
+		
 		let myHTML = `
   			<div class="df-proxmox-container">
 				<div class="grid-item logo" title="Card Version: ${VERSION}" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
@@ -66,15 +67,15 @@ class DFProxmoxCard extends HTMLElement {
     				<div id="stats" class="grid-item stats">
 		`;
 		
-		const statsTag = document.getElementById("stats");
-		/*stats.forEach((stat) => {
-			let htmltag = `
+		stats.forEach((stat) => {
+			let htmltag += `*`;
+			/*let htmltag = `
 				<div class="stat borderRed">
     					<div class="stat_label">${stat}</div>
 					<div class="stat_value">${RAM}</div>
 				</div>`;
-			statsTag.append(htmltag);
-		});*/
+			statsTag.append(htmltag);*/
+		});
 
 		
 		myHTML += `
