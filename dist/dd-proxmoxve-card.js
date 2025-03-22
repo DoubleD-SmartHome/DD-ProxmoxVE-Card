@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.017";
+		const VERSION="0.00.020";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -62,8 +62,9 @@ class DFProxmoxCard extends HTMLElement {
 						<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
 					</div>
 				</div>
-				<div class="grid-item stat1 df-dark_supported">
-					<div class="STAT_VALUE df-dark_supported">S1i</div>
+				<div class="grid-item stat1 borderRed df-dark_supported">
+    					<div class="STAT_LABEL">RAM</div>
+					<div class="STAT_VALUE df-dark_supported">${RAM}/div>
 				</div>
 				<div class="grid-item stat2 df-dark_supported">
 					<div class="STAT_VALUE df-dark_supported">${RAM}%</div>
