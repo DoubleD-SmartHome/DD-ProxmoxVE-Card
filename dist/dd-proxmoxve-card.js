@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.069";
+		const VERSION="0.00.070";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -58,7 +58,7 @@ class DFProxmoxCard extends HTMLElement {
 				</div>
 				<div class="grid-item status">
 					<div class="${STATUS}" style="display: flex; justify-content: center; height:30px;">
-						<div title="${STATUS}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
+						<div title="${hass.formatEntityState(hass.states['sensor.'+this.config.device+'_status'])}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 					</div>
 					<div class="" style="display: flex; justify-content: center; height:30px;">
 						<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>
