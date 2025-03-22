@@ -50,17 +50,22 @@
 		text-align: left;
 	}
         .status { grid-area: Status; }
-        
+
         .stat1 {
 		grid-area: Stat1;
-		border-radius: 25px;
-		border: 2px solid #73AD21;
+
+		height: 40px;
 	}
         .stat2 { grid-area: Stat2; }
         .stat3 { grid-area: Stat3; }
         .stat4 { grid-area: Stat4; }
         .stat5 { grid-area: Stat5; }
         .stat6 { grid-area: Stat6; }
+
+	.borderRed {
+		border-radius: 25px;
+		border: 2px solid red;
+	}
 
 	.actionlabel { grid-area: ActionLabel; }
 
