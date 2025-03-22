@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.036";
+		const VERSION="0.00.038";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -46,7 +46,7 @@ class DFProxmoxCard extends HTMLElement {
 		}
 		const stats = this.config.stats;
         	const statValues = {};		
-		this.content.innerHTML = `
+		let myHTML = `
   			<div class="df-proxmox-container">
 				<div class="grid-item logo" title="Card Version: ${VERSION}" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
 				<div class="grid-item main no-overflow">
@@ -65,7 +65,7 @@ class DFProxmoxCard extends HTMLElement {
 				</div>
     				<div id="stats" class="grid-item stats">
 		`;
-		this.content.innerHTML += `
+		myHTML += `
 					<div class="stat borderRed">
     						<div class="stat_label">RAM</div>
 						<div class="stat_value">${RAM}</div>
@@ -83,6 +83,7 @@ class DFProxmoxCard extends HTMLElement {
 			</div>
 		`;
 
+		this.content.innerHTML = myHTML;
 
 		
 		const actionButtons = this.querySelectorAll('[id^="Action"]');
