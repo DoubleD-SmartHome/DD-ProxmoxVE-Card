@@ -1,5 +1,5 @@
 	/* Layout */
-	/* 2025-03-22 7:38a */
+	/* 2025-03-22 7:45a */
 
 	df-proxmox-card {
 	    display: grid;
@@ -51,7 +51,10 @@
 	}
         .status { grid-area: Status; }
 
-	.stats { grid-area: Stats; }
+	.stats {
+		grid-area: Stats;
+		text-align: -webkit-center;
+	}
 
 	.stat {
 		width: 16%;
