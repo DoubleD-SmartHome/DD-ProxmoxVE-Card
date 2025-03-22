@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.030";
+		const VERSION="0.00.031";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -92,9 +92,6 @@ class DFProxmoxCard extends HTMLElement {
 					}).catch((error) => {
 						confirm("Error occurred while calling the service:", error);
 					});
-					//hass.callService('button', 'press', {
-					//	entity_id: actionid,
-					//});
 				}
 			});
 		});
