@@ -7,7 +7,7 @@
 
 
 This repository contains a Home Assistant custom card for a Proxmox VE Integration, with a few other misc indicators. 
-
+<br>
 ![Default](card_1.0.png)
 
 ## Minimum Home Assistant version
