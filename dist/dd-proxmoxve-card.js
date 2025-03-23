@@ -60,8 +60,10 @@ class DFProxmoxCard extends HTMLElement {
 		if (this.config.backup) {
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>`;
 		}
-		if (this.config.ssl) {			SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
-			SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
+		if (this.config.ssl) {
+			SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
+			TODAY_DATE  = new Date();
+			SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
 			SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
 			SSL_STATUS = "red";
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
