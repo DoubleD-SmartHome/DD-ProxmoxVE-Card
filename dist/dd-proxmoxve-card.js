@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.079";
+		const VERSION="0.00.080";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -30,10 +30,6 @@ class DFProxmoxCard extends HTMLElement {
 			SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
 			NETIN = hass.states['sensor.'+this.config.device+'_network_in'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_in'].state).toFixed(2) : "unavailable";
 			NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
-			SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
-			SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
-			SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
-			SSL_STATUS = "red";
 		}
 		else {
 			UPTIME = "Uptime: (Not running...)";
@@ -43,8 +39,6 @@ class DFProxmoxCard extends HTMLElement {
 			SWP = "- - -";
 			NETIN = "- - -";
 			NETOUT = "- - -";
-			SSL_DATE = "unavailable";
-			SSL_STATUS = "unavailable";
 		}
 		const stats = this.config.stats;
         	const statValues = {};
@@ -66,7 +60,10 @@ class DFProxmoxCard extends HTMLElement {
 		if (this.config.backup) {
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>`;
 		}
-		if (this.config.ssl) {
+		if (this.config.ssl) {			SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
+			SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
+			SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
+			SSL_STATUS = "red";
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
 		}
 /*				<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
