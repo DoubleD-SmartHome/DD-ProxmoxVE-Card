@@ -66,7 +66,7 @@ class DFProxmoxCard extends HTMLElement {
 			SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
 			SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
 			SSL_STATUS = "red";
-			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"><ha-icon icon="mdi:certificate" style="color: darkgreen;" onclick="alert(this.getAttribute('title'))"></ha-icon></div>`;
+			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"  onclick="alert(this.getAttribute('title'))"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
 		}
 /*				<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
 */
