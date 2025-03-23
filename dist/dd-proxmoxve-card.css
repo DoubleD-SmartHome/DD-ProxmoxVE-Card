@@ -1,5 +1,5 @@
 	/* Layout */
-	/* 2025-03-22 7:57a */
+	/* 2025-03-23 4:47a */
 
 	df-proxmox-card {
 	    display: grid;
@@ -57,14 +57,14 @@
 	}
 
 	.stat {
-		width: 16%;
+		width: 20%;
 	}
 
 	.stat_label {}
 	.stat_value {}
 
 	.borderRed {
-		border-radius: 25px;
+		border-radius: 10px;
 		border: 2px solid red;
 		background: #690808;
 	}
