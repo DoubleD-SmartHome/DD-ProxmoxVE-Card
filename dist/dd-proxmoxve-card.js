@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.081";
+		const VERSION="0.00.082";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -62,8 +62,8 @@ class DFProxmoxCard extends HTMLElement {
 		}
 		if (this.config.ssl) {
 			SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
-			TODAY_DATE  = new Date();
-			SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
+//			TODAY_DATE  = new Date();
+			SSL_EXP_SECONDS = Math.abs(SSL_DATE - SSL_DATE);
 			SSL_EXP_DAYS = Math.floor(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24));
 			SSL_STATUS = "red";
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
