@@ -61,6 +61,9 @@ class DFProxmoxCard extends HTMLElement {
 						<div title="${STATUS}}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 					</div>
 					<div class="" style="display: flex; justify-content: center; height:30px;">
+     		`;
+		
+		let myHTML = `
 						<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>
 						<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>
 						<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
