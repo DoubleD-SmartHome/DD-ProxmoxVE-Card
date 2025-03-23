@@ -23,8 +23,8 @@ class DFProxmoxCard extends HTMLElement {
 			result = calculateTimeDifference(STARTTIME, Date());
 			UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
 			//CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
-			CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? hass.formatEntityState(hass.states['sensor.'+this.config.device+'_cpu_used']) : "unavailable";
-			
+			//CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? hass.formatEntityState(hass.states['sensor.'+this.config.device+'_cpu_used']) : "unavailable";
+			CPU = "ABC";
 			RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
 			HDD = hass.states['sensor.'+this.config.device+'_disk_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_disk_used_percentage'].state).toFixed(2) : "unavailable";
 			SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
@@ -58,7 +58,7 @@ class DFProxmoxCard extends HTMLElement {
 				</div>
 				<div class="grid-item status">
 					<div class="${STATUS}" style="display: flex; justify-content: center; height:30px;">
-						<div title="${hass.formatEntityState(hass.states['sensor.'+this.config.device+'_status'])}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
+						<div title="${STATUS}}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 					</div>
 					<div class="" style="display: flex; justify-content: center; height:30px;">
 						<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>
@@ -95,7 +95,6 @@ class DFProxmoxCard extends HTMLElement {
 
 		this.content.innerHTML = myHTML;
 
-		
 		const actionButtons = this.querySelectorAll('[id^="Action"]');
 		actionButtons.forEach((actionButton) => {
 			actionButton.addEventListener('click', (event) => {
