@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.077";
+		const VERSION="0.00.078";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
