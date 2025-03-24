@@ -58,7 +58,7 @@ class DFProxmoxCard extends HTMLElement {
 				case (SSL_EXP_DAYS < 0):
 					SSL_COLOR = "darkred";
     					break;
-  				case (SSL_EXP_DAYS < 70):
+  				case (SSL_EXP_DAYS < 50):
     					SSL_COLOR = "goldenrod";
    					break;
  				 default:
