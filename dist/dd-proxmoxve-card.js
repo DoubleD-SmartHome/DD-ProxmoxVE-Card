@@ -18,6 +18,8 @@ class DFProxmoxCard extends HTMLElement {
 		const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
 		
 		let STARTTIME, STARTUP, result, UPTIME, TODAY_DATE;
+		let BACKUP_DATE = "TOODAY";
+		
 		if (STATUS==="on") {
 			STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
 			STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
@@ -44,7 +46,7 @@ class DFProxmoxCard extends HTMLElement {
      		`;
 
 		if (this.config.backup) {
-			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>`;
+			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>`;
 		}
 		if (this.config.ssl) {
 			let SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
