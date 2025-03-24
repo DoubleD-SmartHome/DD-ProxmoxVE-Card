@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.090";
+		const VERSION="0.00.091";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -16,32 +16,18 @@ class DFProxmoxCard extends HTMLElement {
 		const TYPE = DEVICE_NAME.substring(0, DEVICE_NAME.indexOf('_'));
 		const LOGO = this.config.logo ? this.config.logo : "logo";
 		const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
-		let STARTTIME, STARTUP, result, UPTIME, CPU, RAM, HDD, SWP, NETIN, NETOUT, TODAY_DATE, SSL_DATE, SSL_EXP_SECONDS, SSL_EXP_DAYS, SSL_STATUS;
+		
+		let STARTTIME, STARTUP, result, UPTIME, TODAY_DATE;
 		if (STATUS==="on") {
 			STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
 			STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
 			result = calculateTimeDifference(STARTTIME, Date());
 			UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
-			//CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? parseFloat(hass.states['sensor.'+this.config.device+'_cpu_used'].state).toFixed(2) : "unavailable";
-			//CPU = hass.states['sensor.'+this.config.device+'_cpu_used'] ? hass.formatEntityState(hass.states['sensor.'+this.config.device+'_cpu_used']) : "unavailable";
-			CPU = "ABC";
-			RAM = hass.states['sensor.'+this.config.device+'_memory_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_memory_used_percentage'].state).toFixed(2) : "unavailable";
-			HDD = hass.states['sensor.'+this.config.device+'_disk_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_disk_used_percentage'].state).toFixed(2) : "unavailable";
-			SWP = hass.states['sensor.'+this.config.device+'_swap_used_percentage'] ? parseFloat(hass.states['sensor.'+this.config.device+'_swap_used_percentage'].state).toFixed(2) : "unavailable";
-			NETIN = hass.states['sensor.'+this.config.device+'_network_in'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_in'].state).toFixed(2) : "unavailable";
-			NETOUT = hass.states['sensor.'+this.config.device+'_network_out'] ? parseFloat(hass.states['sensor.'+this.config.device+'_network_out'].state).toFixed(2) : "unavailable";
 		}
 		else {
+			START_UP = "Not running...";
 			UPTIME = "Uptime: (Not running...)";
-			CPU = "- - -";
-			RAM = "- - -";
-			HDD = "- - -";
-			SWP = "- - -";
-			NETIN = "- - -";
-			NETOUT = "- - -";
 		}
-		const stats = this.config.stats;
-        	const statValues = {};
 		
 		let myHTML = `
   			<div class="df-proxmox-container">
@@ -61,11 +47,21 @@ class DFProxmoxCard extends HTMLElement {
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${SSL_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>`;
 		}
 		if (this.config.ssl) {
-			SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
-			TODAY_DATE  = new Date();
-			SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
-			SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
-			SSL_STATUS = "red";
+			let SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
+			let TODAY_DATE  = new Date();
+			let SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
+			let SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
+
+			switch(SSL_EXP_DAYS) {
+				case <0:
+					let SSL_STATUS = "red";
+    					break;
+  				case <70:
+    					let SSL_STATUS = "yellow";
+   					 break;
+ 				 default:
+					let SSL_STATUS = "green";
+			}
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"  onclick="alert(this.getAttribute('title'))"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
 		}
 /*				<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
@@ -76,6 +72,8 @@ class DFProxmoxCard extends HTMLElement {
     				<div class="grid-item stats" style="display: flex; justify-content: center;">
 		`;
 
+		const stats = this.config.stats;
+        	const statValues = {};
 		stats.forEach((stat) => {
 			let myStatValue = hass.states['sensor.'+this.config.device+'_'+stat['stat']] ? hass.formatEntityState(hass.states['sensor.'+this.config.device+'_'+stat['stat']]) : "unavailable";
 			myHTML += `
