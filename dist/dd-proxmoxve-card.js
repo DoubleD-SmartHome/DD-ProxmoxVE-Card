@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.091";
+		const VERSION="0.00.092";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -52,16 +52,16 @@ class DFProxmoxCard extends HTMLElement {
 			let SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
 			let SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
 
-			switch(SSL_EXP_DAYS) {
-				case <0:
-					let SSL_STATUS = "red";
-    					break;
-  				case <70:
-    					let SSL_STATUS = "yellow";
-   					 break;
- 				 default:
+			//switch(SSL_EXP_DAYS) {
+			//	case <0:
+			//		let SSL_STATUS = "red";
+    			//		break;
+  			//	case <70:
+    			//		let SSL_STATUS = "yellow";
+   			//		 break;
+ 			//	 default:
 					let SSL_STATUS = "green";
-			}
+			//}
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"  onclick="alert(this.getAttribute('title'))"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
 		}
 /*				<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
