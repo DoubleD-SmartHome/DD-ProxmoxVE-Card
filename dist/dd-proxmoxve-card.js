@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.094";
+		const VERSION="0.00.095";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -45,7 +45,7 @@ class DFProxmoxCard extends HTMLElement {
      		`;
 
 		if (this.config.backup) {
-			let BACKUP_STATUS = hass.states[this.config.backup ? new Date(hass.states[this.config.backup].state) : "unavailable
+			let BACKUP_STATUS = hass.states[this.config.backup ? new Date(hass.states[this.config.backup].state) : "unavailable";
 			let BACKUP_COLOR;
 			switch(BACKUP_STATUS) {
 				case ("ERROR"):
