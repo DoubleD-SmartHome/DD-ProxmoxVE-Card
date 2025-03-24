@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.093";
+		const VERSION="0.00.094";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -18,7 +18,6 @@ class DFProxmoxCard extends HTMLElement {
 		const STATUS = hass.states['binary_sensor.'+this.config.device+'_status'] ? hass.states['binary_sensor.'+this.config.device+'_status'].state : "unavailable";
 		
 		let STARTTIME, STARTUP, result, UPTIME, TODAY_DATE;
-		let BACKUP_DATE = "TOODAY";
 
 		if (STATUS==="on") {
 			STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
@@ -46,7 +45,19 @@ class DFProxmoxCard extends HTMLElement {
      		`;
 
 		if (this.config.backup) {
-			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_DATE}"><ha-icon icon="mdi:backup-restore" style="color: goldenrod;"></ha-icon></div>`;
+			let BACKUP_STATUS = hass.states[this.config.backup ? new Date(hass.states[this.config.backup].state) : "unavailable
+			let BACKUP_COLOR;
+			switch(BACKUP_STATUS) {
+				case ("ERROR"):
+					BACKUP_COLOR = "darkred";
+    					break;
+  				case ("FAILED"):
+    					BACKUP_COLOR = "goldenrod";
+   					break;
+ 				 default:
+					BACKUP_COLOR = "darkgreen";
+			}
+			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_STATUS}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
 		}
 		if (this.config.ssl) {
 			let SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
