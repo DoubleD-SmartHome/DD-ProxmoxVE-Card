@@ -46,7 +46,7 @@ class DFProxmoxCard extends HTMLElement {
 
 		if (this.config.backup) {
 			let BACKUP_STATUS = hass.states[this.config.backup] ? hass.states[this.config.backup].state : "unavailable";
-			let BACKUP_DATE = hass.states[this.config.backup] ? hass.states[this.config.backup].attribute.datetime : "unavailable";
+			let BACKUP_DATE = hass.states[this.config.backup] ? hass.states[this.config.backup].attributes.datetime : "unavailable";
 			let BACKUP_COLOR;
 			switch(BACKUP_STATUS) {
 				case "SUCCESSFUL":
