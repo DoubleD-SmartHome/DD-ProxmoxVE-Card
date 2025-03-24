@@ -55,10 +55,10 @@ class DFProxmoxCard extends HTMLElement {
 			let SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
 			let SSL_COLOR;
 			switch(true) {
-				case (SSL_EXP_DAYS < 80):
+				case (SSL_EXP_DAYS <= 0 ):
 					SSL_COLOR = "darkred";
     					break;
-  				case (SSL_EXP_DAYS < 90):
+  				case (SSL_EXP_DAYS <= 7):
     					SSL_COLOR = "goldenrod";
    					break;
  				 default:
