@@ -1,6 +1,6 @@
 class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
-		const VERSION="0.00.107";
+		const VERSION="0.00.108";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -78,7 +78,7 @@ class DFProxmoxCard extends HTMLElement {
 				case (SSL_EXP_DAYS > 7):
 					SSL_COLOR = "darkgreen";
 					break;
-  				case (SSL_EXP_DAYS > 0 && <= SSL_EXO_DAYS < 7):
+  				case (SSL_EXP_DAYS > 0 && SSL_EXP_DAYS <= 7):
     					SSL_COLOR = "goldenrod";
    					break;
  				 default:
