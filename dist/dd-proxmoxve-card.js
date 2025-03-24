@@ -40,7 +40,7 @@ class DFProxmoxCard extends HTMLElement {
 				</div>
 				<div class="grid-item status">
 					<div class="${STATUS}" style="display: flex; justify-content: center; height:30px;">
-						<div title="${STATUS}}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
+						<div title="${STATUS}" class="" style="height: 80%; width: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${TYPE}_${STATUS}.png');"></div>
 					</div>
 					<div class="" style="display: flex; justify-content: center; height:30px;">
      		`;
@@ -54,16 +54,16 @@ class DFProxmoxCard extends HTMLElement {
 			let SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
 			let SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
 
-			//switch(SSL_EXP_DAYS) {
-			//	case <0:
-			//		let SSL_STATUS = "red";
-    			//		break;
-  			//	case <70:
-    			//		let SSL_STATUS = "yellow";
-   			//		 break;
- 			//	 default:
+			switch(true) {
+				case (SSL_EXP_DAYS < 0):
+					let SSL_STATUS = "red";
+    					break;
+  				case (SSL_EXP_DAYS < 70):
+    					let SSL_STATUS = "yellow";
+   					break;
+ 				 default:
 					let SSL_STATUS = "green";
-			//}
+			}
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"  onclick="alert(this.getAttribute('title'))"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
 		}
 /*				<div id="icon-container" style="width: 32px; float: left;" title="Console is (not) working...:&#013;${SSL_DATE}"><ha-icon icon="mdi:console" style="color: darkgreen;"></ha-icon></div>
