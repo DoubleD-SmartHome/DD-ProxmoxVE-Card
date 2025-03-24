@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.096";
+		const VERSION="0.00.097";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -43,11 +43,11 @@ class DFProxmoxCard extends HTMLElement {
 					</div>
 					<div class="" style="display: flex; justify-content: center; height:30px;">
      		`;
-/*
+
 		if (this.config.backup) {
-			let BACKUP_STATUS = hass.states[this.config.backup ? new Date(hass.states[this.config.backup].state) : "unavailable";
+			let BACKUP_STATUS = hass.states[this.config.backup] ? new Date(hass.states[this.config.backup].state) : "unavailable";
 			let BACKUP_COLOR;
-			switch(BACKUP_STATUS) {
+			/witch(BACKUP_STATUS) {
 				case ("ERROR"):
 					BACKUP_COLOR = "darkred";
     					break;
@@ -59,7 +59,7 @@ class DFProxmoxCard extends HTMLElement {
 			}
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_STATUS}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
 		}
-  */
+
 		if (this.config.ssl) {
 			let SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
 			let TODAY_DATE  = new Date();
