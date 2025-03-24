@@ -19,7 +19,7 @@ class DFProxmoxCard extends HTMLElement {
 		
 		let STARTTIME, STARTUP, result, UPTIME, TODAY_DATE;
 		let BACKUP_DATE = "TOODAY";
-		
+
 		if (STATUS==="on") {
 			STARTTIME = hass.states['sensor.'+this.config.device+'_last_boot'] ? new Date(hass.states['sensor.'+this.config.device+'_last_boot'].state) : "unavailable";
 			STARTUP = "Start: "+STARTTIME.toString().substring(0,24);
@@ -53,16 +53,16 @@ class DFProxmoxCard extends HTMLElement {
 			let TODAY_DATE  = new Date();
 			let SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
 			let SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
-
+			let SSL_STATUS;
 			switch(true) {
 				case (SSL_EXP_DAYS < 0):
-					let SSL_STATUS = "red";
+					SSL_STATUS = "red";
     					break;
   				case (SSL_EXP_DAYS < 70):
-    					let SSL_STATUS = "yellow";
+    					SSL_STATUS = "yellow";
    					break;
  				 default:
-					let SSL_STATUS = "green";
+					SSL_STATUS = "green";
 			}
 			myHTML += `<div id="icon-container" style="width: 32px; float: left;" title="SSL Certificate Expires:&#013;${SSL_DATE}&#013;Expires in ${SSL_EXP_DAYS} days"  onclick="alert(this.getAttribute('title'))"><ha-icon icon="mdi:certificate" style="color: darkgreen;"></ha-icon></div>`;
 		}
