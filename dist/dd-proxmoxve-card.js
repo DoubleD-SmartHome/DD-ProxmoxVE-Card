@@ -1,7 +1,7 @@
 class DFProxmoxCard extends HTMLElement {
 	// 2025-03-19 @ 2:23pm
 	set hass(hass) {
-		const VERSION="0.00.103";
+		const VERSION="0.00.104";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -10,7 +10,9 @@ class DFProxmoxCard extends HTMLElement {
     				</ha-card>
 			`;
 			this.content = this.querySelector("div");
-		}
+		}	
+		
+		let TODAY_DATE  = new Date();
 
 		const DEVICE_NAME = this.config.device;
 		const TYPE = DEVICE_NAME.substring(0, DEVICE_NAME.indexOf('_'));
@@ -47,10 +49,17 @@ class DFProxmoxCard extends HTMLElement {
 		if (this.config.backup) {
 			let BACKUP_STATUS = hass.states[this.config.backup] ? hass.states[this.config.backup].state : "unavailable";
 			let BACKUP_DATE = hass.states[this.config.backup] ? new Date(hass.states[this.config.backup].attributes.datetime) : "unavailable";
+			let BACKUP_SECONDS = Math.abs(TODAY_DATE - BACKUP_DATE);
+			let BACKUP_DAYS = Math.round(BACKUP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
 			let BACKUP_COLOR;
 			switch(BACKUP_STATUS) {
 				case "SUCCESSFUL":
-					BACKUP_COLOR = "darkgreen";
+					if (BACKUP_DAYS > 1) {
+						BACKUP_COLOR = "goldenrod";
+					}
+					else {
+						BACKUP_COLOR = "darkgreen";
+					}
     					break;
   				case "FAILED":
     					BACKUP_COLOR = "goldenrod";
@@ -58,12 +67,11 @@ class DFProxmoxCard extends HTMLElement {
  				 default:
 					BACKUP_COLOR = "darkred";
 			}
-			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_DATE}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
+			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_DAYS} ago on ${BACKUP_DATE}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
 		}
 
 		if (this.config.ssl) {
 			let SSL_DATE = hass.states[this.config.ssl] ? new Date(hass.states[this.config.ssl].state) : "unavailable";
-			let TODAY_DATE  = new Date();
 			let SSL_EXP_SECONDS = Math.abs(SSL_DATE - TODAY_DATE);
 			let SSL_EXP_DAYS = Math.round(SSL_EXP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
 			let SSL_COLOR;
