@@ -1,6 +1,6 @@
 class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
-		const VERSION="0.00.108";
+		const VERSION="0.00.110";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -27,7 +27,7 @@ class DFProxmoxCard extends HTMLElement {
 			UPTIME = "Uptime: ("+result.days+" Day "+result.hours+" Hrs "+result.minutes+" Mins)";
 		}
 		else {
-			START_UP = "Not running...";
+			STARTUP = "Not running...";
 			UPTIME = "Uptime: (Not running...)";
 		}
 		
