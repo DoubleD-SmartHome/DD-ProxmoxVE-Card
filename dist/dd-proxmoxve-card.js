@@ -169,7 +169,67 @@ class DFProxmoxCard extends HTMLElement {
 	}
 }
 
+class DFProxmoxCardEditor extends HTMLElement {
+  setConfig(config) {
+    this.config = config || {};
+    this.renderEditor();
+  }
+
+  renderEditor() {
+    this.innerHTML = `
+      <div style="padding: 16px;">
+        <label for="device">Device:</label>
+        <input id="device" type="text" value="${this.config.device || ""}">
+        <br><br>
+        <label for="logo">Logo:</label>
+        <input id="logo" type="text" value="${this.config.logo || ""}">
+        <br><br>
+        <label for="ssl">SSL Sensor:</label>
+        <input id="ssl" type="text" value="${this.config.ssl || ""}">
+        <br><br>
+        <label for="stats">Stats (comma-separated):</label>
+        <textarea id="stats">${JSON.stringify(this.config.stats || [])}</textarea>
+        <br><br>
+      </div>
+    `;
+
+    this.querySelector("#device").addEventListener("input", (event) => {
+      this.config.device = event.target.value;
+      this.dispatchConfig();
+    });
+
+    this.querySelector("#logo").addEventListener("input", (event) => {
+      this.config.logo = event.target.value;
+      this.dispatchConfig();
+    });
+
+    this.querySelector("#ssl").addEventListener("input", (event) => {
+      this.config.ssl = event.target.value;
+      this.dispatchConfig();
+    });
+
+    this.querySelector("#stats").addEventListener("input", (event) => {
+      try {
+        this.config.stats = JSON.parse(event.target.value);
+      } catch (err) {
+        console.error("Invalid stats JSON!");
+      }
+      this.dispatchConfig();
+    });
+  }
+
+  dispatchConfig() {
+    const event = new Event("config-changed", {
+      bubbles: true,
+      composed: true,
+    });
+    event.detail = { config: this.config };
+    this.dispatchEvent(event);
+  }
+}
+
 customElements.define("df-proxmox-card", DFProxmoxCard);
+customElements.define("df-proxmox-card-editor", DFProxmoxCardEditor);
 
 // Add card type to the Home Assistant card registry
 window.customCards = window.customCards || [];
