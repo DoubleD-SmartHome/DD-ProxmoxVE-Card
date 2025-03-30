@@ -1,6 +1,6 @@
 class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
-		const VERSION="0.00.111";
+		const VERSION="0.00.112";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -238,6 +238,7 @@ window.customCards.push({
 	name: 'DD Proxmox VE Card',
 	description: 'a DoubleD Proxmox VE Card for Container and VMs.',
 	preview: true,
+	editor: 'df-proxmox-card-editor',
 });
 
 function calculateTimeDifference(startDate, endDate) {
