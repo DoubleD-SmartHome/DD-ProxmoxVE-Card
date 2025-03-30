@@ -1,6 +1,6 @@
 class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
-		const VERSION="0.00.110";
+		const VERSION="0.00.111";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -142,9 +142,9 @@ class DFProxmoxCard extends HTMLElement {
 	// The user supplied configuration. Throw an exception and Home Assistant
 	// will render an error card.
 	setConfig(config) {
-		//if (!config.load_entity) {
-		//  throw new Error("You need to define an entity2");
-		//}
+		if (!config) {
+		  throw new Error("Invalid configuration");
+		}
 		this.config = config;
 	}
 	
