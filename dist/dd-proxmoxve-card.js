@@ -1,6 +1,6 @@
 class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
-		const VERSION="0.00.112";
+		const VERSION="0.00.113";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -33,7 +33,7 @@ class DFProxmoxCard extends HTMLElement {
 		
 		let myHTML = `
   			<div class="df-proxmox-container">
-				<div class="grid-item logo" title="Card Version: ${VERSION}" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/${LOGO}.png');"></div>
+				<div class="grid-item logo" title="Card Version: ${VERSION}" style="height: 80%; background: center / contain no-repeat url('/local/community/DD-ProxmoxVE-Card/assets/logos/${LOGO}.png');"></div>
 				<div class="grid-item main no-overflow">
 					<div class="no-overflow">${DEVICE_NAME}</div>
 					<div class="no-overflow" title="Started: ${STARTUP}">${UPTIME}</div>
