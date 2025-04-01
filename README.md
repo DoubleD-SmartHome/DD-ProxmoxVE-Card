@@ -25,7 +25,7 @@ Here's a breakdown of all the available configuration items:
 |---------------|-----------|-----------|----------------------------------------|--------------------------------------------------------------------------------------------
 | type          | N         |           | Custom card type id                    | `custom:df-proxmox-card`
 | device        | N         |           | Home Assistant device name             | `HA device name`
-| logo          | N         |           | Card logo                              | `linux`, `frigate`, `homeassistant`, `nextcloud`, `rpd`, `vaultwarden`        
+| logo          | N         |           | Card logo                              | `debian`, `frigate`, `home-assistant`, `nextcloud`, `vaultwarden`        
 | ssl           | Y         |           | Entity ID for SSL Expiry Date *        | `sensor.<name>`
 | backup        | Y         |           | Entity ID for Last Backup Date         | `sensor.<name>`
 | console       | Y         |           | Entity ID for Console Check            | `sensor.<name>`.
