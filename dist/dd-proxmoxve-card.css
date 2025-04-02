@@ -42,7 +42,6 @@
 
         .logo {
 		grid-area: Logo;
-		margin: 10px;
 	}
         .main {
 		grid-area: Main;
