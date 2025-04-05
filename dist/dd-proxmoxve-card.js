@@ -1,6 +1,6 @@
 class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
-		const VERSION="0.00.115";
+		const VERSION="0.00.116";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -67,7 +67,7 @@ class DFProxmoxCard extends HTMLElement {
  				 default:
 					BACKUP_COLOR = "darkred";
 			}
-			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_DAYS} days ago on ${BACKUP_DATE}&#013;Runtime:${BACKUP_RUNTIME}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
+			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;&#9;${BACKUP_DAYS} days ago on ${BACKUP_DATE}&#013;Runtime:${BACKUP_RUNTIME}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
 		}
 
 		if (this.config.ssl) {
