@@ -1,6 +1,6 @@
 class DFProxmoxCard extends HTMLElement {
 	set hass(hass) {
-		const VERSION="0.00.114";
+		const VERSION="0.00.115";
 		if (!this.content) {
 			this.innerHTML = `
 				<link type="text/css" rel="stylesheet" href="/local/community/DD-ProxmoxVE-Card/dd-proxmoxve-card.css">
@@ -50,6 +50,7 @@ class DFProxmoxCard extends HTMLElement {
 			let BACKUP_DATE = hass.states[this.config.backup] ? new Date(hass.states[this.config.backup].attributes.datetime) : "unavailable";
 			let BACKUP_SECONDS = Math.abs(TODAY_DATE - BACKUP_DATE);
 			let BACKUP_DAYS = Math.round(BACKUP_SECONDS / (1000 * 60 * 60 * 24)*10)/10;
+			let BACKUP_RUNTIME =  hass.states[this.config.backup] ? new Date(hass.states[this.config.backup].attributes.runtime) : "unavailable";
 			let BACKUP_COLOR;
 			switch(BACKUP_STATUS) {
 				case "SUCCESSFUL":
@@ -66,7 +67,7 @@ class DFProxmoxCard extends HTMLElement {
  				 default:
 					BACKUP_COLOR = "darkred";
 			}
-			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_DAYS} ago on ${BACKUP_DATE}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
+			myHTML += `<div id="icon-container" style="width: 32px; float: left;"  title="Last Backup:&#013;${BACKUP_DAYS} days ago on ${BACKUP_DATE}&#013;Runtime:${BACKUP_RUNTIME}"><ha-icon icon="mdi:backup-restore" style="color: ${BACKUP_COLOR};"></ha-icon></div>`;
 		}
 
 		if (this.config.ssl) {
